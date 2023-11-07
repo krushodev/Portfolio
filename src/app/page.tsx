@@ -1,12 +1,13 @@
-import Section from './components/Section/Section';
+import Main from './layout/Main/Main';
+import Section from './layout/Section/Section';
 
 export default function Home() {
   return (
-    <main>
-      <Section />
-      <Section />
-      <Section />
-      <Section />
-    </main>
+    <Main>
+      <Section title="Header" />
+      <Section title="Technologies" />
+      <Section title="Projects" />
+      <Section title="About" />
+    </Main>
   );
 }
