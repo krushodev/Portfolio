@@ -1,7 +1,12 @@
+import Section from './components/Section/Section';
+
 export default function Home() {
   return (
     <main>
-      <h1>Home</h1>
+      <Section />
+      <Section />
+      <Section />
+      <Section />
     </main>
   );
 }

@@ -5,8 +5,12 @@
 :root {
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 768px) {
   :root {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scroll-snap-stop: normal;
+    overflow-y: scroll;
   }
 }
 
