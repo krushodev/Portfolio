@@ -1,17 +1,23 @@
+'use client';
+
+import { Element } from 'react-scroll';
 import styles from './Section.module.css';
 
 interface SectionProps {
   children?: React.ReactNode;
   title: string;
+  name: string;
 }
 
-const Section: React.FC<SectionProps> = ({ children, title }) => {
+function Section({ children, title, name }: SectionProps) {
   return (
     <section className={styles.container}>
-      <h2>{title}</h2>
-      {children}
+      <Element name={name}>
+        <h2>{title}</h2>
+        {children}
+      </Element>
     </section>
   );
-};
+}
 
 export default Section;

@@ -4,8 +4,8 @@ interface MainProps {
   children: React.ReactNode;
 }
 
-const Main: React.FC<MainProps> = ({ children }) => {
+function Main({ children }: MainProps) {
   return <main className={styles.container}>{children}</main>;
-};
+}
 
 export default Main;
