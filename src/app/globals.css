@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-}
-
 @media (min-width: 768px) {
   :root {
     scroll-snap-type: y mandatory;
@@ -12,7 +9,4 @@
     scroll-snap-stop: normal;
     overflow-y: scroll;
   }
-}
-
-body {
 }

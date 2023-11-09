@@ -1,10 +1,10 @@
 import styles from './Main.module.css';
 
-interface MainProps {
+interface Props {
   children: React.ReactNode;
 }
 
-function Main({ children }: MainProps) {
+function Main({ children }: Props) {
   return <main className={styles.container}>{children}</main>;
 }
 
