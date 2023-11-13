@@ -1,7 +1,6 @@
 'use client';
 
 import sections from '@/app/constants/sections';
-import { useState } from 'react';
 import { Link } from 'react-scroll';
 
 function Navbar() {
