@@ -9,4 +9,7 @@
     scroll-snap-stop: normal;
     overflow-y: scroll;
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
