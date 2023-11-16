@@ -4,6 +4,7 @@ import Skills from './components/SkillsSection/SkillsSection';
 import Navbar from './components/Navbar/Navbar';
 import Main from './layout/Main/Main';
 import Section from './layout/Section/Section';
+import ProjectsSection from './components/ProjectsSection/ProjectsSection';
 
 export default function Home() {
   return (
@@ -17,7 +18,9 @@ export default function Home() {
         <Section name="skills">
           <Skills />
         </Section>
-        <Section name="projects" />
+        <Section name="projects">
+          <ProjectsSection />
+        </Section>
         <Section name="about" />
       </Main>
     </>

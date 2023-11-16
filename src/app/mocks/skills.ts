@@ -8,6 +8,7 @@ import nextjs from '../../../public/icons/nextjs.svg';
 import redux from '../../../public/icons/redux.svg';
 import sass from '../../../public/icons/sass.svg';
 import tailwind from '../../../public/icons/tailwind.svg';
+import bootstrap from '../../../public/icons/bootstrap.svg';
 import materialui from '../../../public/icons/materialui.svg';
 import postman from '../../../public/icons/postman.svg';
 import git from '../../../public/icons/git.svg';
@@ -15,7 +16,12 @@ import docker from '../../../public/icons/docker.svg';
 import mongodb from '../../../public/icons/mongodb.svg';
 import bash from '../../../public/icons/bash.svg';
 
-const skills = [
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+const skills: Skill[] = [
   {
     name: 'Javascript',
     icon: javascript
@@ -55,6 +61,10 @@ const skills = [
   {
     name: 'Tailwind',
     icon: tailwind
+  },
+  {
+    name: 'Bootstrap',
+    icon: bootstrap
   },
   {
     name: 'MaterialUI',

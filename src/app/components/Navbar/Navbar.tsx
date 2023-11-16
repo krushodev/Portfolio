@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 function Navbar() {
   return (
-    <nav className="top-2/4 fixed right-10 bg-green-500 hidden md:block">
+    <nav className="top-2/4 fixed right-10 bg-green-500 hidden md:block z-20">
       <ul className="flex flex-col gap-2">
         {sections.map((section, index) => (
           <li key={index} className="p-1.5 cursor-pointer">
