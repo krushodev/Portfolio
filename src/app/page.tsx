@@ -6,6 +6,7 @@ import Main from './layout/Main/Main';
 import Section from './layout/Section/Section';
 import ProjectsSection from './components/ProjectsSection/ProjectsSection';
 import AboutSection from './components/AboutSection/AboutSection';
+import ContactSection from './components/ContactSection/ContactSection';
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
         </Section>
         <Section name="about">
           <AboutSection />
+        </Section>
+        <Section name="contact">
+          <ContactSection />
         </Section>
       </Main>
     </>
