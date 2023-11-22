@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Main from './layout/Main/Main';
 import Section from './layout/Section/Section';
 import ProjectsSection from './components/ProjectsSection/ProjectsSection';
+import AboutSection from './components/AboutSection/AboutSection';
 
 export default function Home() {
   return (
@@ -21,7 +22,9 @@ export default function Home() {
         <Section name="projects">
           <ProjectsSection />
         </Section>
-        <Section name="about" />
+        <Section name="about">
+          <AboutSection />
+        </Section>
       </Main>
     </>
   );
