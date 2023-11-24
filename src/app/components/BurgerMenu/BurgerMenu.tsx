@@ -16,7 +16,7 @@ function BurgerMenu() {
 
   return (
     <>
-      <div className="fixed bg-red-200 right-10 top-5 z-20 md:hidden">
+      <div className="hidden md:block fixed right-5 top-5 z-20 md:hidden">
         <Hamburger toggled={isOpen} size={35} toggle={handleToggle} />
       </div>
       <div className={`${isOpen ? 'block' : 'hidden'} bg-red-200 fixed h-screen top-0 w-screen flex justify-center flex-col gap-8 items-center md:hidden`}>
