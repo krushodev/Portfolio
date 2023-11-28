@@ -77,6 +77,39 @@ const projects: Project[] = [
       { name: 'react', icon: react },
       { name: 'bootstrap', icon: bootstrap }
     ]
+  },
+  {
+    name: 'OlymFit',
+    description: 'Evolutionary e-commerce platform tailored for fitness enthusiasts, offering a dynamic and immersive experience in the world of health and wellness.',
+    repository: 'https://github.com/krushodev/Olymfit-Ecommerce',
+    deploy: 'https://olymfit.netlify.app/',
+    image: olymfitImage,
+    techStack: [
+      { name: 'react', icon: react },
+      { name: 'bootstrap', icon: bootstrap }
+    ]
+  },
+  {
+    name: 'OlymFit',
+    description: 'Evolutionary e-commerce platform tailored for fitness enthusiasts, offering a dynamic and immersive experience in the world of health and wellness.',
+    repository: 'https://github.com/krushodev/Olymfit-Ecommerce',
+    deploy: 'https://olymfit.netlify.app/',
+    image: olymfitImage,
+    techStack: [
+      { name: 'react', icon: react },
+      { name: 'bootstrap', icon: bootstrap }
+    ]
+  },
+  {
+    name: 'OlymFit',
+    description: 'Evolutionary e-commerce platform tailored for fitness enthusiasts, offering a dynamic and immersive experience in the world of health and wellness.',
+    repository: 'https://github.com/krushodev/Olymfit-Ecommerce',
+    deploy: 'https://olymfit.netlify.app/',
+    image: olymfitImage,
+    techStack: [
+      { name: 'react', icon: react },
+      { name: 'bootstrap', icon: bootstrap }
+    ]
   }
 ];
 

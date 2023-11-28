@@ -1,15 +1,19 @@
 import { Project } from '@/app/mocks/projects';
 import Image from 'next/image';
+import { useState } from 'react';
 
 interface Props {
   data: Project;
 }
 
 function ProjectCard({ data }: Props) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="bg-white h-full grid grid-rows-2 ">
-      <Image src={data.image} alt={data.name} className="w-full h-full object-cover" />
-      <div className="pl-4 bg-red-900 h-full">
+    <div className="w-fit h-[35rem] relative overflow-hidden rounded-lg m-5 md:w-full" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <Image src={data.image} alt={data.name} className="w-full h-full object-cover cursor-pointer hover:blur-[2.5px] hover:brightness-[0.75] hover:scale-[1.07] duration-500" />
+      <div className={`${isHovered ? 'opacity-100' : 'opacity-0'} absolute  top-1/2 left-1/2 translate-x-[-50%] transition duration-500`}>Hola mundo</div>
+      {/* <div className="pl-4 bg-red-900 h-96 absolute">
         <h5 className="mt-10 mb-5 text-2xl">{data.name}</h5>
         <p className="text-lg">{data.description}</p>
         <div className="mt-16 flex items-center gap-4">
@@ -20,7 +24,7 @@ function ProjectCard({ data }: Props) {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

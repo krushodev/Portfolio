@@ -2,7 +2,7 @@ import Image from 'next/image';
 import AnimatedMouse from '../AnimatedMouse/AnimatedMouse';
 import profileImage from '../../../../public/profile.png';
 
-function HomeSection() {
+function HeaderSection() {
   return (
     <div className="bg-yellow-400 h-screen grid grid-rows-3 p-2 xxs:p-3 md:grid-rows-5 xl:p-5 2xl:p-8">
       <div className="row-span-2 flex flex-col gap-5 md:flex-row md:row-span-3 md:justify-between">
@@ -23,4 +23,4 @@ function HomeSection() {
   );
 }
 
-export default HomeSection;
+export default HeaderSection;

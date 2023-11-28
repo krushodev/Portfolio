@@ -1,12 +1,12 @@
+import AboutSection from './components/AboutSection/AboutSection';
 import BurgerMenu from './components/BurgerMenu/BurgerMenu';
-import HomeSection from './components/HomeSection/HomeSection';
-import Skills from './components/SkillsSection/SkillsSection';
+import ContactSection from './components/ContactSection/ContactSection';
+import HeaderSection from './components/HeaderSection/HeaderSection';
+import KnowledgeSection from './components/KnowledgeSection/KnowledgeSection';
 import Navbar from './components/Navbar/Navbar';
+import WorkSection from './components/WorkSection/WorkSection';
 import Main from './layout/Main/Main';
 import Section from './layout/Section/Section';
-import ProjectsSection from './components/ProjectsSection/ProjectsSection';
-import AboutSection from './components/AboutSection/AboutSection';
-import ContactSection from './components/ContactSection/ContactSection';
 
 export default function Home() {
   return (
@@ -15,13 +15,13 @@ export default function Home() {
       <BurgerMenu />
       <Main>
         <Section name="header">
-          <HomeSection />
+          <HeaderSection />
         </Section>
-        <Section name="skills">
-          <Skills />
+        <Section name="knowledge">
+          <KnowledgeSection />
         </Section>
-        <Section name="projects">
-          <ProjectsSection />
+        <Section name="work">
+          <WorkSection />
         </Section>
         <Section name="about">
           <AboutSection />
