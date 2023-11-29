@@ -1,19 +1,13 @@
-import Image from 'next/image';
-import profileImg from '../../../../public/profile.png';
-
 function AboutSection() {
   return (
     <div className="h-screen p-10">
-      <div className="bg-red-300 p-5">
-        <h3 className="text-6xl text-bold pb-8">About me</h3>
-        <div className="bg-yellow-200 grid grid-cols-4">
-          <p className="bg-orange-100 text-2xl col-span-3 p-5">
-            I am a Software Developer based in Argentina, driven by a passion for crafting effective digital solutions. Eager to grow professionally, I am focused on writing clean code and staying
-            updated on best practices. Actively seeking opportunities to collaborate within dynamic teams, I am enthusiastic about contributing my skills to projects that push the boundaries of web
-            development.
-          </p>
-          <Image src={profileImg} alt="profile" className="w-fit my-0 mx-auto" />
-        </div>
+      <h3 className="text-bold mb-8 lg:mb-10 2xl:mb-14 font-medium uppercase text-4xl xxs:text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 3xl:text-9xl">Who am I</h3>
+      <div className="lg:w-4/6 2xl:w-3/6">
+        <p className="text-lg xs:text-xl s:text-2xl lg:text-3xl lg:leading-relaxed 2xl:text-4xl 2xl:leading-relaxed">
+          I am a Software Developer based in Argentina, driven by a passion for crafting effective digital solutions. Eager to grow professionally, I am focused on writing clean code and staying
+          updated on best practices. Actively seeking opportunities to collaborate within dynamic teams, I am enthusiastic about contributing my skills to projects that push the boundaries of web
+          development.
+        </p>
       </div>
     </div>
   );

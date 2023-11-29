@@ -19,7 +19,7 @@ function WorkSection() {
 
   return (
     <div className="h-screen bg-red-200">
-      <h3 className="text-center text-4xl font-medium uppercase p-10 xxs:text-5xl sm:text-6xl md:text-6xl lg:text-7xl lg:p-14 lg:mb-5 xl:text-8xl 3xl:text-9xl">Work</h3>
+      <h3 className="text-4xl font-medium uppercase p-10 xxs:text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 3xl:text-9xl">What I do</h3>
       <div className="bg-red-300">
         <Swiper
           scrollbar={{

@@ -3,7 +3,7 @@ import BurgerMenu from './components/BurgerMenu/BurgerMenu';
 import ContactSection from './components/ContactSection/ContactSection';
 import HeaderSection from './components/HeaderSection/HeaderSection';
 import KnowledgeSection from './components/KnowledgeSection/KnowledgeSection';
-import Navbar from './components/Navbar/Navbar';
+import VerticalNavbar from './components/VerticalNavbar/VerticalNavbar';
 import WorkSection from './components/WorkSection/WorkSection';
 import Main from './layout/Main/Main';
 import Section from './layout/Section/Section';
@@ -11,7 +11,7 @@ import Section from './layout/Section/Section';
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <VerticalNavbar />
       <BurgerMenu />
       <Main>
         <Section name="header">
