@@ -33,11 +33,11 @@ function Work() {
               slidesPerView: 5
             }
           }}
+          spaceBetween={20}
           className="h-full"
-          spaceBetween={10}
         >
           {projects.map((project, index) => (
-            <SwiperSlide key={index} className="p-3">
+            <SwiperSlide key={index}>
               <ProjectCard data={project} />
             </SwiperSlide>
           ))}
