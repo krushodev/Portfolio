@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 function VerticalNavbar() {
   return (
-    <div className="top-2/4 translate-y-[-50%] fixed right-10 hidden md:block z-20">
+    <div className="top-2/4 translate-y-[-50%] fixed right-[0.8em] hidden md:block z-20">
       <ul className="flex flex-col gap-[0.1]">
         {sections.map((section, index) => (
           <li key={index} className="p-1.5 cursor-pointer">
