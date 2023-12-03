@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import skills from '@/app/mocks/skills';
+import Title from '../Title/Title';
 
 function Knowledge() {
   return (
     <div className="h-full flex flex-col">
-      <h3 className="text-4xl py-10 text-center font-medium uppercase xxs:text-5xl sm:text-6xl md:text-6xl lg:text-left lg:text-7xl xl:text-8xl 3xl:text-9xl">My Skills</h3>
+      <Title content="My Skills" />
       <div className="h-full flex justify-center items-center">
         <div className="p-5 grid grid-cols-6 gap-2 xxs:grid-cols-4 xxs:gap-6 xs:gap-8 s:grid-cols-5 sm:grid-cols-6 md:gap-10 lg:grid-cols-6 xl:gap-12 xl:grid-cols-8">
           {skills.map((skill, index) => (
