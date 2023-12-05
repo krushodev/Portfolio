@@ -9,7 +9,7 @@ function Contact() {
     <div className="h-full flex flex-col">
       <Title content="Get in touch" />
       <div className="h-full flex items-center justify-center">
-        <div className="flex flex-col justify-evenly gap-2 xxs:gap-5 xs:gap-8 sm:flex-row sm:gap-1 lg:gap-8 2xl:gap-14">
+        <div className="flex flex-col justify-evenly gap-8 xxs:gap-12 xs:gap-14 sm:flex-row sm:gap-1 lg:gap-8 2xl:gap-16">
           <a className={linkStyle}>
             Resume <RxArrowTopRight />
           </a>

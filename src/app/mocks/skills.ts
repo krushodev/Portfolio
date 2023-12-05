@@ -1,94 +1,77 @@
-import javascript from '../../../public/icons/javascript.svg';
-import typescript from '../../../public/icons/typescript.svg';
-import nodejs from '../../../public/icons/nodejs.svg';
-import jest from '../../../public/icons/jest.svg';
-import expressjs from '../../../public/icons/expressjs.svg';
-import react from '../../../public/icons/react.svg';
-import nextjs from '../../../public/icons/nextjs.svg';
-import redux from '../../../public/icons/redux.svg';
-import sass from '../../../public/icons/sass.svg';
-import tailwind from '../../../public/icons/tailwind.svg';
-import bootstrap from '../../../public/icons/bootstrap.svg';
-import materialui from '../../../public/icons/materialui.svg';
-import postman from '../../../public/icons/postman.svg';
-import git from '../../../public/icons/git.svg';
-import docker from '../../../public/icons/docker.svg';
-import mongodb from '../../../public/icons/mongodb.svg';
-import bash from '../../../public/icons/bash.svg';
+import { Tech, TechCategory } from '../types/globals';
 
-interface Skill {
-  name: string;
-  icon: string;
-}
-
-const skills: Skill[] = [
+const skills: Tech[] = [
+  {
+    name: 'HTML',
+    category: TechCategory.Language
+  },
+  {
+    name: 'CSS',
+    category: TechCategory.Language
+  },
   {
     name: 'Javascript',
-    icon: javascript
+    category: TechCategory.Language
   },
   {
     name: 'Typescript',
-    icon: typescript
+    category: TechCategory.Language
   },
   {
     name: 'NodeJS',
-    icon: nodejs
+    category: TechCategory.Other
   },
   {
     name: 'ExpressJS',
-    icon: expressjs
+    category: TechCategory.Framework
   },
   {
     name: 'JEST',
-    icon: jest
+    category: TechCategory.Library
   },
   {
     name: 'React',
-    icon: react
+    category: TechCategory.Library
   },
   {
     name: 'NextJS',
-    icon: nextjs
+    category: TechCategory.Framework
+  },
+  {
+    name: 'Expo',
+    category: TechCategory.Framework
   },
   {
     name: 'Redux',
-    icon: redux
+    category: TechCategory.Library
   },
   {
     name: 'SASS',
-    icon: sass
+    category: TechCategory.Language
   },
   {
     name: 'Tailwind',
-    icon: tailwind
+    category: TechCategory.Framework
   },
   {
     name: 'Bootstrap',
-    icon: bootstrap
+    category: TechCategory.Framework
   },
   {
     name: 'MaterialUI',
-    icon: materialui
+    category: TechCategory.Framework
   },
   {
-    name: 'GIT',
-    icon: git
+    name: 'Git',
+    category: TechCategory.Other
   },
   {
     name: 'Docker',
-    icon: docker
-  },
-  {
-    name: 'Bash',
-    icon: bash
+    category: TechCategory.Other
   },
   {
     name: 'MongoDB',
-    icon: mongodb
-  },
-  {
-    name: 'Postman',
-    icon: postman
+    category: TechCategory.Other
   }
 ];
 

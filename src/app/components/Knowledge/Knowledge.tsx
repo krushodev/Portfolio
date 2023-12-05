@@ -1,19 +1,46 @@
-import Image from 'next/image';
-import skills from '@/app/mocks/skills';
 import Title from '../Title/Title';
+import skills from '@/app/mocks/skills';
 
 function Knowledge() {
   return (
     <div className="h-full flex flex-col">
       <Title content="My Skills" />
-      <div className="h-full flex justify-center items-center">
-        <div className="p-5 grid grid-cols-6 gap-2 xxs:grid-cols-4 xxs:gap-6 xs:gap-8 s:grid-cols-5 sm:grid-cols-6 md:gap-10 lg:grid-cols-6 xl:gap-12 xl:grid-cols-8">
-          {skills.map((skill, index) => (
-            <div key={index} className="flex flex-col gap-1 items-center">
-              <Image src={skill.icon} alt={skill.name} className="w-20 h-20 transition duration-300 xxs:w-16 xxs:h-16 sm:w-28 sm:h-28 md:w-24 wd:h-24 lg:hover:scale-[1.06]" />
-              <h5 className="hidden sm:block text-center">{skill.name}</h5>
-            </div>
-          ))}
+      <div className="h-full grid grid-flow-row lg:grid-cols-6 lg:gap-5">
+        <div className="lg:col-span-2 xl:col-span-2 flex flex-col">
+          <h5 className="text-base uppercase py-3 xs:py-6 xxs:text-lg xxs:py-5 xs:text-2xl md:text-3xl md:py-10 lg:text-4xl xl:text-5xl">Languages</h5>
+          <div>
+            <ul className="grid grid-cols-2 lg:grid-cols-1">
+              {skills.map(
+                (item, index) =>
+                  item.category === 'language' && (
+                    <li key={index} className="p-2 s:p-4">
+                      <span className="flex items-center gap-3 text-xs xxs:text-sm xs:gap-4 s:text-lg lg:text-xl">
+                        <span className="bg-gray-600 h-2 w-2 rounded-full md:h-3 md:w-3"></span>
+                        {item.name}
+                      </span>
+                    </li>
+                  )
+              )}
+            </ul>
+          </div>
+        </div>
+        <div className="row-span-4 s:row-span-6 lg:col-span-4">
+          <h5 className="text-base uppercase py-3 xs:py-6 xxs:text-lg xxs:py-5 xs:text-2xl md:text-3xl md:py-10 lg:text-4xl xl:text-5xl">Frameworks / Libraries / Others</h5>
+          <div>
+            <ul className="grid grid-cols-3">
+              {skills.map(
+                (item, index) =>
+                  item.category !== 'language' && (
+                    <li key={index} className="p-2 s:p-4">
+                      <span className="flex items-center gap-3 text-xs xxs:text-sm xs:gap-4 s:text-lg lg:text-xl">
+                        <span className="bg-gray-600 h-2 w-2 rounded-full md:h-3 md:w-3"></span>
+                        {item.name}
+                      </span>
+                    </li>
+                  )
+              )}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

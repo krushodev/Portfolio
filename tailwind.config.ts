@@ -9,7 +9,11 @@ const config: Config = {
       xs: '425px',
       s: '500px',
       '3xl': '1800px',
-      ...defaultTheme.screens
+      ...defaultTheme.screens,
+      'screen-h-xs': { raw: '(min-height: 480px)' },
+      'screen-h-sm': { raw: '(min-height: 600px)' },
+      'screen-h-md': { raw: '(min-height: 800px)' },
+      'screen-h-lg': { raw: '(min-height: 1000px)' }
     },
     extend: {
       keyframes: {
