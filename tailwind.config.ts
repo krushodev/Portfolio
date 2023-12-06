@@ -13,7 +13,8 @@ const config: Config = {
       'screen-h-xs': { raw: '(min-height: 480px)' },
       'screen-h-sm': { raw: '(min-height: 600px)' },
       'screen-h-md': { raw: '(min-height: 800px)' },
-      'screen-h-lg': { raw: '(min-height: 1000px)' }
+      'screen-h-lg': { raw: '(min-height: 1000px)' },
+      'screen-h-xl': { raw: '(min-height: 1300px)' }
     },
     extend: {
       keyframes: {
