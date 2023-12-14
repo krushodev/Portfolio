@@ -32,7 +32,7 @@ function Knowledge() {
                 (item, index) =>
                   item.category !== 'language' && (
                     <li key={index} className="p-2 s:p-4">
-                      <span className="flex items-center gap-3 text-xs xxs:text-sm xs:gap-4 s:text-xl">
+                      <span className="flex items-center gap-3 text-xs xxs:text-sm xs:gap-4 lg:text-xl">
                         <span className="bg-gray-600 h-2 w-2 rounded-full md:h-3 md:w-3"></span>
                         {item.name}
                       </span>
