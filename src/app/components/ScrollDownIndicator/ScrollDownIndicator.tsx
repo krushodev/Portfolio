@@ -1,5 +1,5 @@
 function ScrollDownIndicator() {
-  const circleStyle = 'bg-[#b4b2ac] rounded-full absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] origin-[0%]';
+  const circleStyle = 'bg-[#c0bcb1] rounded-full absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] origin-[0%]';
 
   return (
     <div className="w-[75px] h-[75px] s:w-[100px] s:h-[100px] relative">
