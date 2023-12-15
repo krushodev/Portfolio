@@ -10,12 +10,8 @@ function ProjectCard({ data }: Props) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="h-full overflow-hidden relative rounded-lg border border-solid border-blue" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <Image
-        src={data.image}
-        alt={data.name}
-        className={`w-full h-full object-contain md:object-cover cursor-pointer duration-500 ${isHovered ? 'blur-[2.5px] brightness-[0.40] scale-[1.03]' : ''}`}
-      />
+    <div className="h-full overflow-hidden relative rounded-lg cursor-pointer" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <Image src={data.image} alt={data.name} className={`w-full h-full object-contain md:object-cover duration-500 ${isHovered ? 'blur-[2.5px] brightness-[0.40] scale-[1.03]' : ''}`} />
       <div className={`${isHovered ? 'opacity-1' : 'opacity-0'} absolute inset-0 transition duration-500`}>
         <div className="h-full flex flex-col justify-center px-5">
           <h5 className="text-white text-4xl uppercase font-medium">{data.name}</h5>
