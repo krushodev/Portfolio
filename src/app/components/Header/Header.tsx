@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import AnimatedMouse from '../AnimatedMouse/AnimatedMouse';
+import ScrollDownIndicator from '../ScrollDownIndicator/ScrollDownIndicator';
 import profileImage from '../../../../public/profile.png';
 
 function Header() {
@@ -12,7 +12,7 @@ function Header() {
         </div>
       </div>
       <div className="flex justify-between items-end row-span-2 sm:flex-row sm:justify-between">
-        <AnimatedMouse />
+        <ScrollDownIndicator />
         <h1 className="w-3/4 text-3xl text-right font-medium uppercase xs:text-4xl s:w-96 sm:text-right break-words sm:text-6xl sm:w-4/6 lg:text-7xl xl:text-8xl 2xl:w-8/12 2xl:text-9xl">
           Ignacio Kruchowski
         </h1>

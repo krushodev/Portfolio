@@ -18,21 +18,62 @@ const config: Config = {
     },
     extend: {
       keyframes: {
-        fingerScroll: {
+        'blob-1-anim': {
           '0%': {
-            opacity: '1'
+            transform: 'translateX(-50%) translateY(0)'
+          },
+          '14%': {
+            transform: 'translateX(-50%) translateY(-8px)'
+          },
+          '24%': {
+            transform: 'translateX(-50%) translateY(0)'
           },
           '100%': {
-            opacity: '0',
-            transform: 'translateY(15px)'
+            transform: 'translateX(-50%) translateY(0)'
+          }
+        },
+        'blob-2-anim': {
+          '0%': {
+            transform: 'scale(1) translate(-50%, 10px)'
+          },
+          '30%': {
+            transform: 'scale(1) translate(-50%, 10px)'
+          },
+          '70%': {
+            transform: 'scale(1) translate(-50%, 10px)'
+          },
+          '95%': {
+            transform: 'scale(1) translate(-50%, 20px)'
+          },
+          '100%': {
+            transform: 'scale(1) translate(-50%, 10px)'
+          }
+        },
+        scrolly: {
+          '0%': {
+            transform: 'translate3d(0, -150%, 0) rotateX(90deg) scale(0.5) skewX(3deg)'
+          },
+          '30%': {
+            transform: 'translate3d(0, 0, 0) rotateX(0deg) scale(1) skewX(0deg)'
+          },
+          '70%': {
+            transform: 'translate3d(0, 0, 0) rotateX(0deg) scale(1) skewX(0deg)'
+          },
+          '95%': {
+            transform: 'translate3d(0, 50%, 0) rotateX(-90deg) scale(0.5) skewX(-3deg)'
+          },
+          '100%': {
+            transform: 'translate3d(0, 50%, 0) rotateX(-90deg) scale(0.5) skewX(-3deg)'
           }
         }
       }
     },
     animation: {
-      fingerScroll: 'fingerScroll 1s ease-in-out infinite'
+      blobOne: 'blob-1-anim 3s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite',
+      blobTwo: 'blob-2-anim 3s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite',
+      scrollY: 'scrolly 3s cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards infinite'
     }
   },
-  plugins: []
+  plugins: [require('@xpd/tailwind-3dtransforms')]
 };
 export default config;
