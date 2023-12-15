@@ -10,9 +10,25 @@ function ProjectCard({ data }: Props) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="h-full overflow-hidden relative rounded-lg" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <Image src={data.image} alt={data.name} className="w-full h-full object-scale-down cursor-pointer hover:blur-[2.5px] hover:brightness-[0.75] hover:scale-[1.3] duration-500" />
-      <div className={`${isHovered ? 'opacity-100' : 'opacity-0'} absolute top-1/2 left-1/2 translate-x-[-50%] transition duration-500`}>Hola mundo</div>
+    <div className="h-full overflow-hidden relative rounded-lg border border-solid border-blue" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <Image
+        src={data.image}
+        alt={data.name}
+        className={`w-full h-full object-contain md:object-cover cursor-pointer duration-500 ${isHovered ? 'blur-[2.5px] brightness-[0.40] scale-[1.03]' : ''}`}
+      />
+      <div className={`${isHovered ? 'opacity-1' : 'opacity-0'} absolute inset-0 transition duration-500`}>
+        <div className="h-full flex flex-col justify-center px-5">
+          <h5 className="text-white text-4xl uppercase font-medium">{data.name}</h5>
+          <p className="text-white text-sm mt-4 font-medium">{data.description}</p>
+          <div className="mt-10 gap-5 flex justify-center flex-wrap">
+            {data.techStack.map((item, index) => (
+              <span key={index} className="text-sm text-slate-300 font-medium">
+                {item.name}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
       {/* <div className="pl-4 bg-red-900 h-96 absolute">
         <h5 className="mt-10 mb-5 text-2xl">{data.name}</h5>
         <p className="text-lg">{data.description}</p>
