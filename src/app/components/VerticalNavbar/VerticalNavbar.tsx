@@ -25,7 +25,7 @@ function VerticalNavbar() {
           <li key={index} className="p-1.5 cursor-pointer">
             <Link
               to={section}
-              activeClass="bg-black scale-[1.6] transition duration-150"
+              activeClass="scale-[1.6] transition duration-150"
               onSetActive={handleActive}
               className={`${isEvenSection ? 'bg-black' : 'bg-[#dbd9d3]'} ${isInitialSection ? 'hidden' : 'block'} h-[0.7em] w-[0.7em]  rounded-full`}
               duration={50}
