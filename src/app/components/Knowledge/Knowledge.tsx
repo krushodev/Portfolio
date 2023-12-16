@@ -13,9 +13,9 @@ function Knowledge() {
               {skills.map(
                 (item, index) =>
                   item.category === 'language' && (
-                    <li key={index} className="p-2 s:p-4">
+                    <li key={index} className="p-2 s:py-3 s:px-4">
                       <span className="flex items-center gap-3 text-xs xxs:text-sm xs:gap-4 s:text-xl lg:text-xl">
-                        <span className="bg-gray-600 h-2 w-2 rounded-full md:h-3 md:w-3"></span>
+                        <span className="bg-black h-2 w-2 rounded-full"></span>
                         {item.name}
                       </span>
                     </li>
@@ -31,9 +31,9 @@ function Knowledge() {
               {skills.map(
                 (item, index) =>
                   item.category !== 'language' && (
-                    <li key={index} className="p-2 s:p-4">
+                    <li key={index} className="p-2 s:py-3 s:px-4">
                       <span className="flex items-center gap-3 text-xs xxs:text-sm xs:gap-4 lg:text-xl">
-                        <span className="bg-gray-600 h-2 w-2 rounded-full md:h-3 md:w-3"></span>
+                        <span className="bg-black h-2 w-2 rounded-full"></span>
                         {item.name}
                       </span>
                     </li>
