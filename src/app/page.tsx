@@ -1,5 +1,6 @@
-import Main from './layout/Main/Main';
-import Section from './layout/Section/Section';
+import Main from './layout/Main';
+import Landing from './layout/Landing';
+import Section from './layout/Section';
 
 import Header from './components/Header/Header';
 import Knowledge from './components/Knowledge/Knowledge';
@@ -12,10 +13,10 @@ import VerticalNavbar from './components/VerticalNavbar/VerticalNavbar';
 
 export default function Home() {
   return (
-    <>
+    <Main>
       <VerticalNavbar />
       <BurgerMenu />
-      <Main>
+      <Landing>
         <Section name="header">
           <Header />
         </Section>
@@ -31,7 +32,7 @@ export default function Home() {
         <Section name="contact">
           <Contact />
         </Section>
-      </Main>
-    </>
+      </Landing>
+    </Main>
   );
 }

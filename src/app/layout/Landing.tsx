@@ -2,8 +2,8 @@ interface Props {
   children: React.ReactNode;
 }
 
-function Main({ children }: Props) {
+function Landing({ children }: Props) {
   return <main>{children}</main>;
 }
 
-export default Main;
+export default Landing;
