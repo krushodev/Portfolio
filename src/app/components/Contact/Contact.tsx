@@ -13,10 +13,10 @@ function Contact() {
           <a className={linkStyle}>
             Resume <RxArrowTopRight />
           </a>
-          <a className={linkStyle}>
+          <a className={linkStyle} href="https://www.linkedin.com/in/ignacio-kruchowski/" target="_blank">
             Linkedin <RxArrowTopRight />
           </a>
-          <a className={linkStyle}>
+          <a className={linkStyle} href="https://www.github.com/krushodev" target="_blank">
             Github <RxArrowTopRight />
           </a>
         </div>
