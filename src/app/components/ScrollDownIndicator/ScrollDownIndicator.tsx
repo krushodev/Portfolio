@@ -5,7 +5,7 @@ function ScrollDownIndicator() {
     <div className="w-[75px] h-[75px] s:w-[100px] s:h-[100px] relative">
       <div className={`${circleStyle} w-[35px] h-[65px] z-0 top-[0px] animate-blobOne s:w-[41px] s:h-[33px]`}></div>
       <div className={`${circleStyle}  w-full h-full`}></div>
-      <div className={`${circleStyle}  w-[35px] h-[20px] z-[9] bottom-[0px] animate-blobTwo s:w-[41px] s:h-[33px]`}></div>
+      <div className={`${circleStyle}  w-[35px] h-[20px] z-0 bottom-[0px] animate-blobTwo s:w-[41px] s:h-[33px]`}></div>
       <svg className="z-50 relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" xmlSpace="preserve">
         <defs>
           <clipPath id="cut-off-arrow">

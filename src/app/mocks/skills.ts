@@ -10,11 +10,11 @@ const skills: Tech[] = [
     category: TechCategory.Language
   },
   {
-    name: 'Javascript',
+    name: 'JavaScript',
     category: TechCategory.Language
   },
   {
-    name: 'Typescript',
+    name: 'TypeScript',
     category: TechCategory.Language
   },
   {
