@@ -14,8 +14,8 @@ function About() {
             development.
           </p>
         </div>
-        <div className="hidden screen-h-sm:flex justify-end items-end lg:col-span-2 lg:items-center lg:justify-center">
-          <Image src={aboutImage} alt="Picture of me" className="h-[12em] screen-h-md:h-[22em] screen-h-xl:h-[35em] lg:!h-[25em] md:pr-7 w-fit object-cover rounded" />
+        <div className="hidden screen-h-sm:flex items-end lg:col-span-2 lg:items-center lg:justify-center">
+          <Image src={aboutImage} alt="Picture of me" className="w-full p-3 h-[12em] screen-h-md:h-[24em] screen-h-xl:h-[45em] lg:p-0 lg:!h-[25em] md:pr-7 w-fit object-cover rounded" />
         </div>
       </div>
     </div>
