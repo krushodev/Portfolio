@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={inter.className}>
         {children}
-        <div className="h-full w-full fixed left-0 top-0 pointer-events-none z-[99] opacity-[0.1] after:absolute after:w-[calc(100%_+_20rem)] after:h-[calc(100%_+_20rem)] after:top-[-10rem] after:left-[-10rem] after:bg-[url('/noise.jpg')] after:animate-bgNoise"></div>
+        <div className="h-full w-full fixed left-0 top-0 pointer-events-none opacity-[0.1] after:absolute after:w-[calc(100%_+_20rem)] after:h-[calc(100%_+_20rem)] after:top-[-10rem] after:left-[-10rem] after:bg-[url('/noise.jpg')] after:animate-bgNoise"></div>
       </body>
     </html>
   );

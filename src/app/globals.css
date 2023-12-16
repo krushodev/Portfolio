@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  cursor: none;
+}
+
 @media (min-width: 768px) {
   :root {
     scroll-snap-type: y mandatory;

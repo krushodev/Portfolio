@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact';
 
 import BurgerMenu from './components/BurgerMenu/BurgerMenu';
 import VerticalNavbar from './components/VerticalNavbar/VerticalNavbar';
+import AnimatedCursor from 'react-animated-cursor';
 
 export default function Home() {
   return (
@@ -33,6 +34,19 @@ export default function Home() {
           <Contact />
         </Section>
       </Landing>
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={45}
+        innerScale={1}
+        outerScale={2}
+        outerAlpha={0}
+        innerStyle={{
+          backgroundColor: '#a59f92'
+        }}
+        outerStyle={{
+          border: '3px solid #a59f92'
+        }}
+      />
     </Main>
   );
 }
