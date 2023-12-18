@@ -1,9 +1,9 @@
 import { StaticImageData } from 'next/image';
 
-import mockup1 from '../../../public/mock1.png';
-import mockup2 from '../../../public/mock2.png';
-import mockup3 from '../../../public/mock3.png';
-import mockup4 from '../../../public/mock4.png';
+import mockup1 from '../../../public/images/mock1.png';
+import mockup2 from '../../../public/images/mock2.png';
+import mockup3 from '../../../public/images/mock3.png';
+import mockup4 from '../../../public/images/mock4.png';
 
 import { Tech } from '../types/globals';
 

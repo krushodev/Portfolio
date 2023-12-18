@@ -1,5 +1,5 @@
 import Title from '../Title/Title';
-import { RxArrowTopRight } from 'react-icons/rx';
+import { RxArrowTopRight, RxArrowDown } from 'react-icons/rx';
 
 function Contact() {
   const linkStyle =
@@ -10,8 +10,8 @@ function Contact() {
       <Title content="Get in touch" />
       <div className="h-full flex items-center justify-center">
         <div className="flex flex-col justify-evenly gap-8 xxs:gap-12 xs:gap-14 sm:flex-row sm:gap-1 lg:gap-8 2xl:gap-16">
-          <a className={linkStyle}>
-            Resume <RxArrowTopRight />
+          <a className={linkStyle} href="/files/CV-IGNACIO_KRUCHOWSKI.pdf" download={true}>
+            Resume <RxArrowDown />
           </a>
           <a className={linkStyle} href="https://www.linkedin.com/in/ignacio-kruchowski/" target="_blank">
             Linkedin <RxArrowTopRight />
