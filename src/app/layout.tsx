@@ -5,8 +5,34 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: 'Welcome to my personal portfolio'
+  title: 'Ignacio Kruchowski 🤘 | Software Developer',
+  description: `
+  Welcome to my digital space! I'm Ignacio Kruchowski, a Full Stack Developer with a passion for crafting seamless and innovative web experiences. Specializing in front-end development using the powerful MERN stack, I bring creativity and technical knowledge to every project.
+`,
+  keywords: [
+    'Full Stack Developer',
+    'Front-end Developer',
+    'Software Developer',
+    'Software Architecture',
+    'MERN Stack',
+    'ReactJSs',
+    'NodeJSs',
+    'ExpressJS',
+    'MongoDB',
+    'JavaScript',
+    'HTML5',
+    'CSS3',
+    'Responsive Web Design',
+    'Web Development',
+    'UI/UX Design',
+    'Single Page Applications (SPA)',
+    'RESTful API',
+    'Git/GitHub',
+    'Redux',
+    'Bootstrap',
+    'Material-UI'
+  ],
+  authors: [{ name: 'Ignacio Kruchowski' }]
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
