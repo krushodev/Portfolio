@@ -8,7 +8,7 @@ function Header() {
       <div className="flex flex-col gap-5 row-span-4 md:flex-row md:row-span-3 md:justify-between">
         <h2 className="text-5xl font-medium uppercase break-words sm:text-6xl s:w-3/4 lg:w-2/4 lg:text-7xl xl:text-8xl 2xl:text-9xl">Frontend Developer</h2>
         <div className="w-full overflow-hidden md:max-w-xs md:max-h-72 xl:max-w-sm xl:max-h-80 z-10">
-          <Image src={profileImage} alt="Profile picture" className="w-full max-h-full object-top object-cover" />
+          <Image src={profileImage} alt="Profile picture" width={296} height={296} className="w-full max-h-full object-top object-cover" />
         </div>
       </div>
       <div className="flex justify-between items-end row-span-2 sm:flex-row sm:justify-between">
