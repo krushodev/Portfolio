@@ -36,7 +36,7 @@ export default function Home() {
       </Landing>
       <AnimatedCursor
         innerSize={8}
-        outerSize={45}
+        outerSize={38}
         innerScale={1}
         outerScale={2}
         outerAlpha={0}
@@ -44,7 +44,7 @@ export default function Home() {
           backgroundColor: '#a59f92'
         }}
         outerStyle={{
-          border: '3px solid #a59f92'
+          border: '2px solid #a59f92'
         }}
       />
     </Main>
