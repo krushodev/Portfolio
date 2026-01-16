@@ -6,6 +6,28 @@
   cursor: none;
 }
 
+/* Project Swiper Styles */
+.project-swiper .swiper-button-next,
+.project-swiper .swiper-button-prev {
+  color: #ecebe8;
+  transition: transform 0.3s ease;
+}
+
+.project-swiper .swiper-button-next:hover,
+.project-swiper .swiper-button-prev:hover {
+  transform: scale(1.1);
+}
+
+.project-swiper .swiper-pagination-bullet {
+  background: #a9a69e;
+  opacity: 0.5;
+}
+
+.project-swiper .swiper-pagination-bullet-active {
+  background: #ecebe8;
+  opacity: 1;
+}
+
 @media (min-width: 768px) {
   :root {
     scroll-snap-type: y mandatory;

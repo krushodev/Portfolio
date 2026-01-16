@@ -19,7 +19,7 @@ function VerticalNavbar() {
   };
 
   return (
-    <div className="top-2/4 translate-y-[-50%] fixed right-[0.3em] hidden md:block z-20">
+    <div className="top-2/4 translate-y-[-50%] fixed right-[0.3em] hidden md:block z-50">
       <ul className="flex flex-col gap-[0.1]">
         {sections.map((section, index) => (
           <li key={index} className="p-1.5 cursor-pointer">
@@ -27,7 +27,7 @@ function VerticalNavbar() {
               to={section}
               activeClass="scale-[1.6] transition duration-150"
               onSetActive={handleActive}
-              className={`${isEvenSection ? 'bg-black' : 'bg-[#dbd9d3]'} ${isInitialSection ? 'hidden' : 'block'} h-[0.7em] w-[0.7em]  rounded-full`}
+              className={`${isEvenSection ? 'bg-black' : 'bg-[#dbd9d3]'} ${isInitialSection ? 'hidden' : 'block'} h-[0.7em] w-[0.7em] rounded-full`}
               duration={50}
               spy={true}
               smooth={true}

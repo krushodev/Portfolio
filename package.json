@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "gsap": "^3.14.2",
     "hamburger-react": "^2.5.0",
     "next": "14.0.1",
+    "next-intl": "^4.7.0",
     "react": "^18",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18",

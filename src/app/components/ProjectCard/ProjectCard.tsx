@@ -1,5 +1,6 @@
 import { Project } from '@/app/mocks/projects';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 interface Props {
@@ -8,10 +9,11 @@ interface Props {
 
 function ProjectCard({ data }: Props) {
   const [isHovered, setIsHovered] = useState(false);
+  const slug = data.name.toLowerCase().replace(/\s+/g, '-');
 
   return (
     <div className="h-full overflow-hidden relative rounded-lg" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <a href={data.deploy ? data.deploy : data.repository} target="_blank">
+      <Link href={`/project/${slug}`}>
         <Image src={data.image} alt={data.name} className={`w-full h-full object-contain md:object-cover duration-500 ${isHovered ? 'blur-[2.5px] brightness-[0.40] scale-[1.03]' : ''}`} />
         <div className={`${isHovered ? 'opacity-1' : 'opacity-0'} absolute inset-0 transition duration-500`}>
           <div className="h-full flex flex-col justify-center px-5 screen-h-md:gap-5 screen-h-lg:gap-10">
@@ -26,7 +28,7 @@ function ProjectCard({ data }: Props) {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

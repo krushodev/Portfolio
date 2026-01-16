@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Title from '../Title/Title';
-import aboutImage from '../../../../public/images/about-picture.jpg';
+import aboutImage from '../../../../public/images/about-picture.jpeg';
 
 function About() {
   return (
