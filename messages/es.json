@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "title": "Ignacio Kruchowski 🤘 | Desarrollador de Software",
+    "description": "¡Bienvenido a mi espacio digital! Soy Ignacio Kruchowski, un Desarrollador Full Stack apasionado por crear experiencias web innovadoras y fluidas. Especializado en desarrollo front-end utilizando el poderoso stack MERN, aporto creatividad y conocimiento técnico a cada proyecto."
+  },
+  "sections": {
+    "work": "Lo que hago",
+    "knowledge": "Mis Habilidades",
+    "about": "Quién soy",
+    "contact": "Contacto"
+  },
+  "knowledge": {
+    "languages": "Lenguajes",
+    "frameworks": "Frameworks / Librerías / Otros"
+  },
+  "about": {
+    "description": "Soy un Desarrollador de Software radicado en Argentina, impulsado por la pasión de crear soluciones digitales efectivas. Con ganas de crecer profesionalmente, me enfoco en escribir código limpio y mantenerme actualizado en las mejores prácticas. Busco activamente oportunidades para colaborar en equipos dinámicos, con entusiasmo por contribuir mis habilidades a proyectos que expandan los límites del desarrollo web."
+  },
+  "contact": {
+    "resume": "Currículum"
+  },
+  "project": {
+    "notFound": "Proyecto no encontrado",
+    "back": "Volver",
+    "projectShowcase": "Presentación del Proyecto",
+    "overview": "Descripción",
+    "techStack": "Stack Tecnológico",
+    "links": "Enlaces y Recursos",
+    "sourceCode": "Repositorio de Código Fuente",
+    "liveDemo": "Demo en Producción"
+  },
+  "projects": {
+    "olymfit": {
+      "description": "Plataforma de comercio electrónico evolutiva diseñada para entusiastas del fitness, ofreciendo una experiencia dinámica e inmersiva en el mundo de la salud y el bienestar."
+    },
+    "todo-app": {
+      "description": "Una aplicación de tareas para una organización fluida. Crea, gestiona y organiza tus tareas sin esfuerzo con esta plataforma intuitiva. Experimenta simplicidad y productividad en un solo lugar."
+    },
+    "marketswift": {
+      "description": "Un centro optimizado para marketing y automatización efectiva. Simplifica procesos y eleva estrategias sin esfuerzo con esta plataforma intuitiva."
+    },
+    "voxchat": {
+      "description": "VoxChat es una aplicación de chat intuitiva. Te permite chatear de forma segura, personalizar salas e instalar fácilmente para una experiencia fluida. La aplicación se centra en conversaciones simples en tiempo real con un toque personal."
+    }
+  }
+}

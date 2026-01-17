@@ -9,6 +9,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import AnimatedCursor from 'react-animated-cursor';
 import { RxArrowTopRight } from 'react-icons/rx';
 import { useTranslations } from 'next-intl';
+import LanguagePicker from '@/app/components/LanguagePicker/LanguagePicker';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -18,12 +19,15 @@ function ProjectDetail() {
   const params = useParams();
   const router = useRouter();
   const [project, setProject] = useState<Project | null>(null);
+  const [projectSlug, setProjectSlug] = useState<string>('');
   const t = useTranslations('project');
+  const tProjects = useTranslations('projects');
 
   useEffect(() => {
     const slug = params.slug as string;
     const foundProject = projects.find(p => p.name.toLowerCase().replace(/\s+/g, '-') === slug);
     setProject(foundProject || null);
+    setProjectSlug(slug);
   }, [params.slug]);
 
   if (!project) {
@@ -36,6 +40,7 @@ function ProjectDetail() {
 
   return (
     <div className="w-screen h-screen bg-black text-[#ecebe8] selection:bg-[#dbd9d3] selection:text-black overflow-hidden">
+      <LanguagePicker isProjectPage={true} />
       <div className="h-full p-3 xxs:p-4 xl:p-6 2xl:p-8 flex flex-col">
         {/* Back Button */}
         <button onClick={() => router.back()} className="group flex items-center gap-2 mb-4 text-[#ecebe8] hover:text-[#dbd9d3] transition-colors duration-300 flex-shrink-0">
@@ -82,7 +87,7 @@ function ProjectDetail() {
             {/* Description */}
             <div className="space-y-3 flex-shrink-0">
               <h2 className="text-base xxs:text-lg sm:text-xl lg:text-2xl font-bold uppercase tracking-wide border-b border-[#a9a69e] pb-1 inline-block">{t('overview')}</h2>
-              <p className="text-xs xxs:text-sm sm:text-base lg:text-lg text-[#ecebe8] leading-relaxed font-light text-justify">{project.description}</p>
+              <p className="text-xs xxs:text-sm sm:text-base lg:text-lg text-[#ecebe8] leading-relaxed font-light text-justify">{tProjects(`${projectSlug}.description`)}</p>
             </div>
 
             {/* Tech Stack */}
@@ -144,9 +149,6 @@ function ProjectDetail() {
           border: '2px solid #a59f92'
         }}
       />
-
-      {/* Noise overlay */}
-      <div className="h-full w-full fixed left-0 top-0 pointer-events-none opacity-[0.1] after:absolute after:w-[calc(100%_+_20rem)] after:h-[calc(100%_+_20rem)] after:top-[-10rem] after:left-[-10rem] after:bg-[url('/images/noise.jpg')] after:animate-bgNoise"></div>
     </div>
   );
 }

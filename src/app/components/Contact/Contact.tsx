@@ -1,11 +1,17 @@
+'use client';
+
 import contact from '@/app/mocks/contact';
 import Title from '../Title/Title';
 import { RxArrowTopRight, RxArrowDown } from 'react-icons/rx';
+import { useTranslations } from 'next-intl';
 
 function Contact() {
+  const t = useTranslations('sections');
+  const tContact = useTranslations('contact');
+
   return (
     <div className="h-full flex flex-col">
-      <Title content="Get in touch" />
+      <Title content={t('contact')} />
       <div className="h-full flex items-center justify-center">
         <div className="flex flex-col justify-evenly gap-8 xxs:gap-12 xs:gap-14 sm:flex-row sm:gap-1 lg:gap-8 2xl:gap-16">
           {contact.map((item, index) => (
@@ -16,7 +22,7 @@ function Contact() {
               download={item.isFile}
               target={`${item.isFile ? '' : '_blank'}`}
             >
-              {item.name}
+              {item.isFile ? tContact('resume') : item.name}
               {item.isFile ? <RxArrowDown /> : <RxArrowTopRight />}
             </a>
           ))}
