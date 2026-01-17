@@ -43,7 +43,7 @@ function ProjectDetail() {
       <LanguagePicker isProjectPage={true} />
       <div className="h-full p-3 xxs:p-4 xl:p-6 2xl:p-8 flex flex-col">
         {/* Back Button */}
-        <button onClick={() => router.back()} className="group flex items-center gap-2 mb-4 text-[#ecebe8] hover:text-[#dbd9d3] transition-colors duration-300 flex-shrink-0">
+        <button onClick={() => router.push(`/${params.locale}`)} className="group flex items-center gap-2 mb-4 text-[#ecebe8] hover:text-[#dbd9d3] transition-colors duration-300 flex-shrink-0">
           <svg className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -87,7 +87,7 @@ function ProjectDetail() {
             {/* Description */}
             <div className="space-y-3 flex-shrink-0">
               <h2 className="text-base xxs:text-lg sm:text-xl lg:text-2xl font-bold uppercase tracking-wide border-b border-[#a9a69e] pb-1 inline-block">{t('overview')}</h2>
-              <p className="text-xs xxs:text-sm sm:text-base lg:text-lg text-[#ecebe8] leading-relaxed font-light text-justify">{tProjects(`${projectSlug}.description`)}</p>
+              <p className="text-xs xxs:text-sm sm:text-base lg:text-lg text-[#ecebe8] leading-relaxed text-justify">{tProjects(`${projectSlug}.description`)}</p>
             </div>
 
             {/* Tech Stack */}
@@ -107,26 +107,20 @@ function ProjectDetail() {
             <div className="space-y-3 pt-4 border-t border-[#a9a69e] flex-shrink-0">
               <h2 className="text-base xxs:text-lg sm:text-xl lg:text-2xl font-bold uppercase tracking-wide border-b border-[#a9a69e] pb-1 inline-block">{t('links')}</h2>
               <div className="space-y-2">
-                <a
-                  href={project.repository}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative flex items-center gap-2 text-sm xxs:text-base sm:text-base lg:text-lg uppercase pb-1 cursor-pointer after:content-[''] after:transition-transform after:duration-500 after:h-[1px] after:w-full after:left-0 after:bottom-0 after:bg-[#ecebe8] after:absolute after:scale-x-0 after:scale-y-100 after:origin-[0%_100%] hover:after:scale-x-100 font-light"
-                >
-                  <span className="text-[#dbd9d3]">▸</span>
-                  {t('sourceCode')}
-                  <RxArrowTopRight className="text-[#dbd9d3]" />
+                <a href={project.repository} target="_blank" rel="noopener noreferrer" className="relative block text-sm xxs:text-base sm:text-base lg:text-lg uppercase pb-1 cursor-pointer">
+                  <span className="relative inline-flex items-center gap-2 after:content-[''] after:transition-transform after:duration-500 after:h-[1px] after:w-full after:left-0 after:bottom-0 after:bg-[#ecebe8] after:absolute after:scale-x-0 after:scale-y-100 after:origin-[0%_100%] hover:after:scale-x-100">
+                    <span className="text-[#dbd9d3]">▸</span>
+                    {t('sourceCode')}
+                    <RxArrowTopRight className="text-[#dbd9d3]" />
+                  </span>
                 </a>
                 {project.deploy && (
-                  <a
-                    href={project.deploy}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative flex items-center gap-2 text-sm xxs:text-base sm:text-base lg:text-lg uppercase pb-1 cursor-pointer after:content-[''] after:transition-transform after:duration-500 after:h-[1px] after:w-full after:left-0 after:bottom-0 after:bg-[#ecebe8] after:absolute after:scale-x-0 after:scale-y-100 after:origin-[0%_100%] hover:after:scale-x-100 font-light"
-                  >
-                    <span className="text-[#dbd9d3]">▸</span>
-                    {t('liveDemo')}
-                    <RxArrowTopRight className="text-[#dbd9d3]" />
+                  <a href={project.deploy} target="_blank" rel="noopener noreferrer" className="relative block text-sm xxs:text-base sm:text-base lg:text-lg uppercase pb-1 cursor-pointer">
+                    <span className="relative inline-flex items-center gap-2 after:content-[''] after:transition-transform after:duration-500 after:h-[1px] after:w-full after:left-0 after:bottom-0 after:bg-[#ecebe8] after:absolute after:scale-x-0 after:scale-y-100 after:origin-[0%_100%] hover:after:scale-x-100">
+                      <span className="text-[#dbd9d3]">▸</span>
+                      {t('liveDemo')}
+                      <RxArrowTopRight className="text-[#dbd9d3]" />
+                    </span>
                   </a>
                 )}
               </div>

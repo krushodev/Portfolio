@@ -7,8 +7,8 @@ interface contactInfo {
 const contact: contactInfo[] = [
   {
     name: 'Resume',
-    link: '/files/CV-IGNACIO_KRUCHOWSKI.pdf',
-    isFile: true
+    link: 'https://kruchowski-cv.vercel.app',
+    isFile: false
   },
   {
     name: 'Linkedin',
