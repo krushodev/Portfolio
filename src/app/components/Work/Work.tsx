@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
 import ProjectCard from '../ProjectCard/ProjectCard';
-import projects from '@/app/mocks/projects';
+import projects from '@/data/projects';
 import { useTranslations } from 'next-intl';
 
 import 'swiper/css';

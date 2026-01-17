@@ -3,7 +3,8 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import projects, { Project } from '@/app/mocks/projects';
+import projects from '@/data/projects';
+import { Project } from '@/data/projects/types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import AnimatedCursor from 'react-animated-cursor';
@@ -25,7 +26,7 @@ function ProjectDetail() {
 
   useEffect(() => {
     const slug = params.slug as string;
-    const foundProject = projects.find(p => p.name.toLowerCase().replace(/\s+/g, '-') === slug);
+    const foundProject = projects.find(p => p.slug === slug);
     setProject(foundProject || null);
     setProjectSlug(slug);
   }, [params.slug]);
@@ -65,7 +66,7 @@ function ProjectDetail() {
               >
                 <SwiperSlide>
                   <div className="w-full h-full flex items-center justify-center bg-gray-900/30">
-                    <Image src={project.image} alt={project.name} className="w-full h-full object-cover object-center" />
+                    <Image src={project.image.src} alt={project.name} width={project.image.width} height={project.image.height} className="w-full h-full object-cover object-center" />
                   </div>
                 </SwiperSlide>
               </Swiper>
