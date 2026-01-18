@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Ignacio Kruchowski 🤘 | Software Developer",
+    "title": "Ignacio Kruchowski | Full Stack Developer",
     "description": "Welcome to my digital space! I'm Ignacio Kruchowski, a Full Stack Developer with a passion for crafting seamless and innovative web experiences. Specializing in front-end development using the powerful MERN stack, I bring creativity and technical knowledge to every project."
   },
   "sections": {
@@ -29,18 +29,35 @@
     "sourceCode": "Source Code Repository",
     "liveDemo": "Live Production Demo"
   },
+
   "projects": {
+    "tilded": {
+      "description": "A modern productivity ecosystem featuring Kanban boards, multi-language support (10+ languages), and personalized workflows built with React 19 and Fastify.",
+      "cardDescription": "Productivity & Kanban ecosystem with multi-language support."
+    },
+    "nova": {
+      "description": "Real-time financial dashboard for market exploration, integrating WebSockets and Binance API with a high-performance Bun and Redis backend.",
+      "cardDescription": "Explore financial markets with real-time data streaming."
+    },
+    "devflights": {
+      "description": "Interactive BI analytics platform for airline operations, utilizing a PostgreSQL Star Schema and Python for advanced data visualization.",
+      "cardDescription": "Business Intelligence and Data Analytics for airline fleets."
+    },
+    "vox-chat": {
+      "description": "Feature-rich secure chat application with real-time messaging via Socket.io, room customization, and a seamless mobile-first experience.",
+      "cardDescription": "Secure real-time chat with custom private rooms."
+    },
+    "market-swift": {
+      "description": "High-performance landing page for marketing automation, focused on optimized UX/UI and clear conversion paths for digital strategies.",
+      "cardDescription": "Conversion-focused landing for marketing automation."
+    },
     "olymfit": {
-      "description": "Evolutionary e-commerce platform tailored for fitness enthusiasts, offering a dynamic and immersive experience in the world of health and wellness."
+      "description": "Evolutionary e-commerce platform tailored for fitness enthusiasts, offering a dynamic and immersive experience in the world of health and wellness.",
+      "cardDescription": "Fitness e-commerce platform with advanced features."
     },
     "todo-app": {
-      "description": "A to-do app for seamless task organization. Create, manage, and organize your tasks effortlessly with this user-friendly platform. Experience simplicity and productivity in one place."
-    },
-    "marketswift": {
-      "description": "A streamlined hub for effective marketing and automation. Simplify processes and elevate strategies effortlessly with this user-friendly platform."
-    },
-    "voxchat": {
-      "description": "VoxChat is a user-friendly chat app. It lets you chat securely, customize rooms, and install effortlessly for a smooth experience. The app is all about simple, real-time conversations with a personal touch."
+      "description": "A to-do app for seamless task organization. Create, manage, and organize your tasks effortlessly with this user-friendly platform.",
+      "cardDescription": "Organize tasks efficiently with this intuitive app."
     }
   }
 }

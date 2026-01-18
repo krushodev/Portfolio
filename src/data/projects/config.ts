@@ -2,68 +2,93 @@ import { Project } from './types';
 
 const projects: Project[] = [
   {
-    id: 'olymfit',
-    name: 'OlymFit',
-    slug: 'olymfit',
-    description: 'Evolutionary e-commerce platform tailored for fitness enthusiasts, offering a dynamic and immersive experience in the world of health and wellness.',
+    id: 'tilded',
+    name: 'Tilded',
+    slug: 'tilded',
+    cardTitle: 'Productivity & Kanban Ecosystem',
+    cardDescription: 'Complete task and project management system with multi-language support.',
+    description: 'A modern task management app featuring Kanban boards, project sections, and custom priorities to streamline workflows.',
+    detailText: 'Full-stack productivity tool with a personalized user experience and advanced task organization.',
     longDescription:
-      'OlymFit is a comprehensive e-commerce solution designed specifically for the fitness industry. The platform features advanced product categorization, user authentication, payment processing, and a responsive design that works seamlessly across all devices.',
-    repository: 'https://github.com/krushodev/Olymfit-Ecommerce',
-    deploy: 'https://olymfit.netlify.app/',
-    image: {
-      src: '/images/projects/olymfit/hero.png',
-      width: 500,
-      height: 300
-    },
+      'Tilded is a modern productivity ecosystem that allows users to organize tasks into projects and sections. It features Kanban boards, priority levels, custom color-coded labels, and a personalized profile system with avatar generation. Built for scale with React 19 and Fastify, supporting 10+ languages.',
+    repository: 'https://github.com/krushodev/Tilded',
+    deploy: null,
+    image: { src: '/images/projects/tilded/hero.jpeg', width: 500, height: 300 },
     gallery: [
-      {
-        src: '/images/projects/olymfit/hero.png',
-        width: 500,
-        height: 300
-      },
-      {
-        src: '/images/projects/olymfit/detail1.png',
-        width: 500,
-        height: 300
-      },
-      {
-        src: '/images/projects/olymfit/detail2.png',
-        width: 500,
-        height: 300
-      }
+      { src: '/images/projects/tilded/hero.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/tilded/detail1.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/tilded/detail2.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/tilded/detail3.jpeg', width: 500, height: 300 }
     ],
-    techStack: [{ name: 'React' }, { name: 'Bootstrap' }, { name: 'Firebase' }],
+    techStack: [{ name: 'React 19' }, { name: 'Fastify' }, { name: 'TypeScript' }, { name: 'PostgreSQL' }, { name: 'TypeORM' }, { name: 'Zustand' }, { name: 'Tailwind CSS' }, { name: 'HeroUI' }],
     featured: true,
     status: 'completed',
-    year: 2023
+    year: 2024
   },
   {
-    id: 'todo-app',
-    name: 'ToDo App',
-    slug: 'todo-app',
-    description: 'A to-do app for seamless task organization. Create, manage, and organize your tasks effortlessly with this user-friendly platform.',
+    id: 'nova',
+    name: 'Nova',
+    slug: 'nova',
+    cardTitle: 'Real-Time Financial Dashboard',
+    cardDescription: 'Explore market instruments with live updates via WebSockets.',
+    description: 'A high-performance market explorer that integrates real-time data and historical analysis for digital assets.',
+    detailText: 'Comprehensive financial application showcasing real-time data streaming and historical market analysis.',
     longDescription:
-      'A comprehensive task management application designed to boost productivity and organization. Features include task creation, categorization, priority settings, due dates, and progress tracking.',
-    repository: 'https://github.com/krushodev/ToDo-App',
-    deploy: 'https://todoappkrusho.netlify.app/',
-    image: {
-      src: '/images/projects/todo-app/hero.png',
-      width: 500,
-      height: 300
-    },
+      'Nova is a financial dashboard designed for market exploration. It integrates directly with the Binance API to fetch historical kline data and uses WebSockets for real-time price updates. The backend is optimized with Bun and Redis to handle high-frequency data efficiently.',
+    repository: 'https://github.com/krushodev/Nova',
+    deploy: null,
+    image: { src: '/images/projects/nova/hero.jpeg', width: 500, height: 300 },
     gallery: [
-      {
-        src: '/images/projects/todo-app/hero.png',
-        width: 500,
-        height: 300
-      },
-      {
-        src: '/images/projects/todo-app/mobile.png',
-        width: 300,
-        height: 500
-      }
+      { src: '/images/projects/nova/hero.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/nova/detail1.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/nova/detail2.jpeg', width: 500, height: 300 }
     ],
-    techStack: [{ name: 'React' }, { name: 'Typescript' }, { name: 'Chakra UI' }, { name: 'Zustand' }],
+    techStack: [{ name: 'React' }, { name: 'Fastify' }, { name: 'Bun' }, { name: 'Redis' }, { name: 'PostgreSQL' }, { name: 'WebSocket' }, { name: 'Zustand' }, { name: 'TypeORM' }],
+    featured: true,
+    status: 'completed',
+    year: 2024
+  },
+  {
+    id: 'devflights',
+    name: 'DevFlights Airways',
+    slug: 'devflights',
+    cardTitle: 'BI Airline Analytics',
+    cardDescription: 'Business Intelligence dashboard for airline operational and financial data.',
+    description: 'An interactive analytics platform that transforms complex airline data into actionable business insights.',
+    detailText: 'Data Analytics solution featuring a Star Schema Data Warehouse and interactive visualizations.',
+    longDescription:
+      'DevFlights Airways is a BI project that migrates static reporting to an interactive web dashboard. It utilizes a PostgreSQL Data Warehouse with a Star Schema (Fact and Dimension tables) to analyze fleet efficiency, route profitability, and passenger behavior using Python and Streamlit.',
+    repository: 'https://github.com/krushodev/devlights-airways',
+    deploy: 'https://devflights-airways.streamlit.app/',
+    image: { src: '/images/projects/devflights/hero.jpeg', width: 500, height: 300 },
+    gallery: [
+      { src: '/images/projects/devflights/hero.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/devflights/detail1.jpeg', width: 500, height: 300 }
+    ],
+    techStack: [{ name: 'Python' }, { name: 'Streamlit' }, { name: 'PostgreSQL' }, { name: 'Pandas' }, { name: 'Plotly' }, { name: 'SQLAlchemy' }],
+    featured: false,
+    status: 'completed',
+    year: 2024
+  },
+  {
+    id: 'vox-chat',
+    name: 'VoxChat',
+    slug: 'vox-chat',
+    cardTitle: 'Secure Real-Time Chat',
+    cardDescription: 'Real-time messaging with room customization and secure encryption.',
+    description: 'A feature-rich chat application for mobile, offering secure communication and seamless user interaction.',
+    detailText: 'Comprehensive chat application with real-time messaging, room customization, and secure authentication.',
+    longDescription:
+      'VoxChat is a user-friendly chat app that lets you chat securely, customize rooms, and install effortlessly. Built with a focus on real-time performance using Socket.io and a robust MERN-like stack for mobile.',
+    repository: 'https://github.com/krushodev/VoxChat-App',
+    deploy: null,
+    image: { src: '/images/projects/vox-chat/hero.png', width: 500, height: 300 },
+    gallery: [
+      { src: '/images/projects/vox-chat/hero.png', width: 500, height: 300 },
+      { src: '/images/projects/vox-chat/detail1.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/vox-chat/detail2.jpeg', width: 500, height: 300 }
+    ],
+    techStack: [{ name: 'React Native' }, { name: 'TypeScript' }, { name: 'Expo' }, { name: 'Socket.io' }, { name: 'MongoDB' }, { name: 'ExpressJS' }, { name: 'Redux' }],
     featured: true,
     status: 'completed',
     year: 2023
@@ -72,59 +97,17 @@ const projects: Project[] = [
     id: 'market-swift',
     name: 'MarketSwift',
     slug: 'market-swift',
-    description: 'A streamlined hub for effective marketing and automation. Simplify processes and elevate strategies effortlessly.',
-    longDescription: 'MarketSwift is a powerful marketing automation platform designed to streamline marketing campaigns and improve efficiency.',
+    cardTitle: 'Marketing Automation Landing',
+    cardDescription: 'High-performance landing page for marketing automation solutions.',
+    description: 'A streamlined hub for effective marketing strategies and process automation.',
+    detailText: 'Optimized landing page focused on UX/UI and clear conversion paths for marketing tools.',
+    longDescription:
+      'MarketSwift is a streamlined landing page designed for a marketing automation platform. It focuses on high performance and intuitive design to communicate complex automation features effectively.',
     repository: 'https://github.com/krushodev/MarketSwift-Landing',
     deploy: 'https://landing-marketing-app.vercel.app/',
-    image: {
-      src: '/images/projects/market-swift/hero.png',
-      width: 500,
-      height: 300
-    },
-    gallery: [
-      {
-        src: '/images/projects/market-swift/hero.png',
-        width: 500,
-        height: 300
-      },
-      {
-        src: '/images/projects/market-swift/dashboard.png',
-        width: 800,
-        height: 400
-      }
-    ],
-    techStack: [{ name: 'React' }],
-    featured: false,
-    status: 'completed',
-    year: 2023
-  },
-  {
-    id: 'vox-chat',
-    name: 'VoxChat',
-    slug: 'vox-chat',
-    description: 'VoxChat is a user-friendly chat app that lets you chat securely, customize rooms, and install effortlessly for a smooth experience.',
-    longDescription:
-      'VoxChat is a comprehensive chat application featuring real-time messaging, room customization, secure authentication, and seamless installation. Built with modern technologies for optimal performance and user experience.',
-    repository: 'https://github.com/krushodev/VoxChat-App',
-    deploy: null,
-    image: {
-      src: '/images/projects/vox-chat/hero.png',
-      width: 500,
-      height: 300
-    },
-    gallery: [
-      {
-        src: '/images/projects/vox-chat/hero.png',
-        width: 500,
-        height: 300
-      },
-      {
-        src: '/images/projects/vox-chat/mobile.png',
-        width: 300,
-        height: 500
-      }
-    ],
-    techStack: [{ name: 'React Native' }, { name: 'Typescript' }, { name: 'Expo' }, { name: 'TanStack Query' }, { name: 'MongoDB' }, { name: 'ExpressJS' }, { name: 'Socket.io' }, { name: 'Redux' }],
+    image: { src: '/images/projects/market-swift/hero.png', width: 500, height: 300 },
+    gallery: [{ src: '/images/projects/market-swift/hero.png', width: 500, height: 300 }],
+    techStack: [{ name: 'React' }, { name: 'Vite' }, { name: 'Tailwind CSS' }],
     featured: false,
     status: 'completed',
     year: 2023

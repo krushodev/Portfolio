@@ -16,7 +16,7 @@ function Work() {
   return (
     <div className="h-full flex flex-col gap-2">
       <Title content={t('work')} />
-      <div className="h-3/4 flex items-center pr-8">
+      <div className="h-3/4 flex items-center pr-8 overflow-hidden">
         <Swiper
           scrollbar={{
             hide: true
@@ -25,19 +25,19 @@ function Work() {
           grabCursor={true}
           breakpoints={{
             1100: {
-              slidesPerView: 2
+              slidesPerView: 1.5
             },
             1400: {
-              slidesPerView: 3
+              slidesPerView: 2
             },
             1700: {
-              slidesPerView: 4
+              slidesPerView: 2.5
             },
             2100: {
-              slidesPerView: 5
+              slidesPerView: 3
             }
           }}
-          spaceBetween={20}
+          spaceBetween={30}
           className="h-full"
         >
           {projects.map((project, index) => (

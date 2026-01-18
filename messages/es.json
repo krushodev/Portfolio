@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Ignacio Kruchowski 🤘 | Desarrollador de Software",
+    "title": "Ignacio Kruchowski | Full Stack Developer",
     "description": "¡Bienvenido a mi espacio digital! Soy Ignacio Kruchowski, un Desarrollador Full Stack apasionado por crear experiencias web innovadoras y fluidas. Especializado en desarrollo front-end utilizando el poderoso stack MERN, aporto creatividad y conocimiento técnico a cada proyecto."
   },
   "sections": {
@@ -30,17 +30,33 @@
     "liveDemo": "Demo en Producción"
   },
   "projects": {
+    "tilded": {
+      "description": "Ecosistema de productividad moderno con tableros Kanban, soporte para más de 10 idiomas y flujos personalizados creado con React 19 y Fastify.",
+      "cardDescription": "Ecosistema de productividad y Kanban con soporte multiidioma."
+    },
+    "nova": {
+      "description": "Dashboard financiero en tiempo real para exploración de mercados, integrando WebSockets y la API de Binance con un backend de alto rendimiento en Bun y Redis.",
+      "cardDescription": "Explora mercados financieros con datos en tiempo real."
+    },
+    "devflights": {
+      "description": "Plataforma interactiva de BI para operaciones aéreas, utilizando un esquema estrella en PostgreSQL y Python para visualización avanzada de datos.",
+      "cardDescription": "Business Intelligence y Data Analytics para flotas aéreas."
+    },
+    "vox-chat": {
+      "description": "Aplicación de chat seguro con mensajería en tiempo real vía Socket.io, personalización de salas y una experiencia móvil fluida.",
+      "cardDescription": "Chat seguro en tiempo real con salas privadas."
+    },
+    "market-swift": {
+      "description": "Landing page de alto rendimiento para automatización de marketing, centrada en UX/UI optimizado y rutas de conversión para estrategias digitales.",
+      "cardDescription": "Landing de conversión para automatización de marketing."
+    },
     "olymfit": {
-      "description": "Plataforma de comercio electrónico evolutiva diseñada para entusiastas del fitness, ofreciendo una experiencia dinámica e inmersiva en el mundo de la salud y el bienestar."
+      "description": "Plataforma de comercio electrónico evolutiva diseñada para entusiastas del fitness, ofreciendo una experiencia dinámica e inmersiva en el mundo de la salud y el bienestar.",
+      "cardDescription": "Plataforma e-commerce fitness con características avanzadas."
     },
     "todo-app": {
-      "description": "Una aplicación de tareas para una organización fluida. Crea, gestiona y organiza tus tareas sin esfuerzo con esta plataforma intuitiva. Experimenta simplicidad y productividad en un solo lugar."
-    },
-    "marketswift": {
-      "description": "Un centro optimizado para marketing y automatización efectiva. Simplifica procesos y eleva estrategias sin esfuerzo con esta plataforma intuitiva."
-    },
-    "voxchat": {
-      "description": "VoxChat es una aplicación de chat intuitiva. Te permite chatear de forma segura, personalizar salas e instalar fácilmente para una experiencia fluida. La aplicación se centra en conversaciones simples en tiempo real con un toque personal."
+      "description": "Una aplicación de tareas para una organización fluida. Crea, gestiona y organiza tus tareas sin esfuerzo con esta plataforma intuitiva.",
+      "cardDescription": "Organiza tareas eficientemente con esta app intuitiva."
     }
   }
 }

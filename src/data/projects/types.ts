@@ -12,7 +12,10 @@ export interface Project {
   id: string;
   name: string;
   slug: string;
+  cardTitle: string;
+  cardDescription: string;
   description: string;
+  detailText: string;
   longDescription?: string;
   repository: string;
   deploy: string | null;

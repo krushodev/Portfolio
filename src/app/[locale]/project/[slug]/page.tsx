@@ -56,20 +56,29 @@ function ProjectDetail() {
           {/* Image Column */}
           <div className="order-2 lg:order-1">
             <div className="border-l-4 border-[#dbd9d3] pl-4 h-full flex items-center">
-              <Swiper
-                navigation={true}
-                pagination={{ clickable: true }}
-                modules={[Navigation, Pagination]}
-                className="w-full h-full max-h-[50vh] lg:max-h-full rounded overflow-hidden project-swiper"
-                grabCursor={true}
-                direction="horizontal"
-              >
-                <SwiperSlide>
-                  <div className="w-full h-full flex items-center justify-center bg-gray-900/30">
-                    <Image src={project.image.src} alt={project.name} width={project.image.width} height={project.image.height} className="w-full h-full object-cover object-center" />
-                  </div>
-                </SwiperSlide>
-              </Swiper>
+              {project.gallery && project.gallery.length > 0 ? (
+                <Swiper
+                  navigation={true}
+                  pagination={{ clickable: true }}
+                  modules={[Navigation, Pagination]}
+                  className="w-full h-full max-h-[50vh] lg:max-h-full rounded overflow-hidden project-swiper"
+                  grabCursor={true}
+                  direction="horizontal"
+                  spaceBetween={10}
+                >
+                  {project.gallery.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="w-full h-full flex items-center justify-center bg-gray-900/30">
+                        <Image src={image.src} alt={`${project.name} - Image ${index + 1}`} width={image.width} height={image.height} className="w-full h-full object-cover object-center" />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gray-900/30 rounded overflow-hidden">
+                  <Image src={project.image.src} alt={project.name} width={project.image.width} height={project.image.height} className="w-full h-full object-cover object-center" />
+                </div>
+              )}
             </div>
           </div>
 
