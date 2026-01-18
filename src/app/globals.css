@@ -40,6 +40,47 @@
   left: 10px;
 }
 
+/* Work Section Swiper Navigation */
+.work-swiper .swiper-button-next,
+.work-swiper .swiper-button-prev {
+  color: #ecebe8;
+  transition: transform 0.3s ease;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  background-color: rgba(171, 166, 158, 0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(236, 235, 232, 0.2);
+}
+
+.work-swiper .swiper-button-next:hover,
+.work-swiper .swiper-button-prev:hover {
+  transform: scale(1.1);
+  background-color: rgba(171, 166, 158, 0.5);
+}
+
+.work-swiper .swiper-button-next::after,
+.work-swiper .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.work-swiper .swiper-button-next {
+  right: 20px;
+}
+
+.work-swiper .swiper-button-prev {
+  left: 20px;
+}
+
+@media (min-width: 1100px) {
+  .work-swiper .swiper-button-next,
+  .work-swiper .swiper-button-prev {
+    display: none;
+  }
+}
+
 .project-swiper .swiper-pagination-bullet {
   background: #a9a69e;
   opacity: 0.5;

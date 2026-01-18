@@ -8,6 +8,7 @@ const config: Config = {
       xxs: '375px',
       xs: '425px',
       s: '500px',
+      'custom-header': '570px',
       '3xl': '1800px',
       ...defaultTheme.screens,
       'screen-h-xs': { raw: '(min-height: 480px)' },

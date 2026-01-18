@@ -1,13 +1,14 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Scrollbar } from 'swiper/modules';
+import { Scrollbar, Navigation } from 'swiper/modules';
 import ProjectCard from '../ProjectCard/ProjectCard';
 import projects from '@/data/projects';
 import { useTranslations } from 'next-intl';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
 import Title from '../Title/Title';
 
 function Work() {
@@ -21,24 +22,52 @@ function Work() {
           scrollbar={{
             hide: true
           }}
-          modules={[Scrollbar]}
+          navigation={{
+            enabled: true,
+            hiddenClass: 'swiper-button-hidden'
+          }}
+          modules={[Scrollbar, Navigation]}
           grabCursor={true}
+          centeredSlides={true}
           breakpoints={{
+            0: {
+              slidesPerView: 1,
+              centeredSlides: true,
+              navigation: {
+                enabled: true
+              }
+            },
             1100: {
-              slidesPerView: 1.5
+              slidesPerView: 1.5,
+              centeredSlides: false,
+              navigation: {
+                enabled: false
+              }
             },
             1400: {
-              slidesPerView: 2
+              slidesPerView: 2,
+              centeredSlides: false,
+              navigation: {
+                enabled: false
+              }
             },
             1700: {
-              slidesPerView: 2.5
+              slidesPerView: 2.5,
+              centeredSlides: false,
+              navigation: {
+                enabled: false
+              }
             },
             2100: {
-              slidesPerView: 3
+              slidesPerView: 3,
+              centeredSlides: false,
+              navigation: {
+                enabled: false
+              }
             }
           }}
           spaceBetween={30}
-          className="h-full"
+          className="h-full work-swiper"
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index}>
