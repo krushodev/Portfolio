@@ -34,6 +34,10 @@
       "description": "Ecosistema de productividad moderno con tableros Kanban, soporte para más de 10 idiomas y flujos personalizados creado con React 19 y Fastify.",
       "cardDescription": "Ecosistema de productividad y Kanban con soporte multiidioma."
     },
+    "nexmon": {
+      "description": "Monitor de sistema ultra-ligero y de alto rendimiento construido con Rust y Tauri. Proporciona visualización en tiempo real de recursos (CPU, RAM, Procesos) con un consumo de recursos cercano a cero y una interfaz moderna impulsada por React.",
+      "cardDescription": "Monitor de sistema de alto rendimiento construido con Rust y Tauri."
+    },
     "nova": {
       "description": "Dashboard financiero en tiempo real para exploración de mercados, integrando WebSockets y la API de Binance con un backend de alto rendimiento en Bun y Redis.",
       "cardDescription": "Explora mercados financieros con datos en tiempo real."

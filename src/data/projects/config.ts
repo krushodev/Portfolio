@@ -23,8 +23,32 @@ const projects: Project[] = [
     techStack: [{ name: 'React 19' }, { name: 'Fastify' }, { name: 'TypeScript' }, { name: 'PostgreSQL' }, { name: 'TypeORM' }, { name: 'Zustand' }, { name: 'Tailwind CSS' }, { name: 'HeroUI' }],
     featured: true,
     status: 'completed',
-    year: 2024
+    year: 2025
   },
+  {
+    id: 'nexmon',
+    name: 'Nexmon',
+    slug: 'nexmon',
+    cardTitle: 'Lightweight System Monitor',
+    cardDescription: 'High-performance monitoring tool built with Rust and Tauri for near-zero overhead.',
+    description: 'A beautiful and efficient system monitor designed for real-time performance tracking with minimal resource usage.',
+    detailText: 'Cross-platform desktop application delivering deep system insights through a high-performance Rust core.',
+    longDescription:
+      'Nexmon is a high-performance system monitor designed to provide real-time metrics without the resource drain of traditional tools. By leveraging Rust and the Tauri framework, it achieves native-level performance and a tiny memory footprint. It features real-time CPU and RAM tracking, process management, and a modern, minimalist interface built with React and Tailwind CSS.',
+    repository: 'https://github.com/krushodev/nexmon',
+    deploy: 'https://nexmon.vercel.app/',
+    image: { src: '/images/projects/nexmon/hero.jpeg', width: 500, height: 300 },
+    gallery: [
+      { src: '/images/projects/nexmon/hero.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/nexmon/detail1.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/nexmon/detail2.jpeg', width: 500, height: 300 }
+    ],
+    techStack: [{ name: 'Rust' }, { name: 'Tauri' }, { name: 'React' }, { name: 'TypeScript' }, { name: 'Tailwind CSS' }],
+    featured: true,
+    status: 'completed',
+    year: 2025
+  },
+
   {
     id: 'nova',
     name: 'Nova',
@@ -46,7 +70,7 @@ const projects: Project[] = [
     techStack: [{ name: 'React' }, { name: 'Fastify' }, { name: 'Bun' }, { name: 'Redis' }, { name: 'PostgreSQL' }, { name: 'WebSocket' }, { name: 'Zustand' }, { name: 'TypeORM' }],
     featured: true,
     status: 'completed',
-    year: 2024
+    year: 2025
   },
   {
     id: 'devflights',
@@ -68,7 +92,7 @@ const projects: Project[] = [
     techStack: [{ name: 'Python' }, { name: 'Streamlit' }, { name: 'PostgreSQL' }, { name: 'Pandas' }, { name: 'Plotly' }, { name: 'SQLAlchemy' }],
     featured: false,
     status: 'completed',
-    year: 2024
+    year: 2025
   },
   {
     id: 'vox-chat',
