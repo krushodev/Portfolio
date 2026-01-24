@@ -14,15 +14,15 @@ function Knowledge() {
   return (
     <div className="h-full flex flex-col">
       <Title content={t('knowledge')} />
-      <div className="flex-1">
-        <div className="grid grid-cols-1 lg:grid-cols-6 lg:gap-5 h-full">
-          <div className="lg:col-span-2 xl:col-span-2">
-            <div className="space-y-2 lg:space-y-4">
-              <h4 className="text-lg xxs:text-xl font-bold uppercase tracking-wide">{tKnowledge('languages')}</h4>
-              <ul className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-1 gap-1 lg:gap-2">
+      <div className="flex-1 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 lg:gap-5 h-full">
+          <div className="md:col-span-1 lg:col-span-2 xl:col-span-2">
+            <div className="space-y-1 lg:space-y-4 h-full overflow-hidden">
+              <h4 className="text-sm xxs:text-base font-bold uppercase tracking-wide">{tKnowledge('languages')}</h4>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-1 gap-0.5 lg:gap-1 h-full overflow-y-auto">
                 {languagesList.map((item, index) => (
                   <li key={index} className="p-1 lg:p-2 lg:py-3 lg:px-4">
-                    <span className="flex items-center gap-1 lg:gap-2 text-xs xxs:text-sm lg:text-xl">
+                    <span className="flex items-center gap-1 lg:gap-2 text-xs xxs:text-xs lg:text-base">
                       <span className="text-black">|</span>
                       {item.name}
                     </span>
@@ -31,13 +31,13 @@ function Knowledge() {
               </ul>
             </div>
           </div>
-          <div className="lg:col-span-4 xl:col-span-4">
-            <div className="space-y-2 lg:space-y-4">
-              <h4 className="text-lg xxs:text-xl font-bold uppercase tracking-wide">{tKnowledge('frameworks')}</h4>
-              <ul className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-1 lg:gap-2">
+          <div className="md:col-span-1 lg:col-span-4 xl:col-span-4">
+            <div className="space-y-1 lg:space-y-4 h-full overflow-hidden">
+              <h4 className="text-sm xxs:text-base font-bold uppercase tracking-wide">{tKnowledge('frameworks')}</h4>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-0.5 lg:gap-1 h-full overflow-y-auto">
                 {notLanguagesList.map((item, index) => (
                   <li key={index} className="p-1 lg:p-2 lg:py-3 lg:px-4">
-                    <span className="flex items-center gap-1 lg:gap-2 text-xs xxs:text-sm lg:text-xl">
+                    <span className="flex items-center gap-1 lg:gap-2 text-xs xxs:text-xs lg:text-base">
                       <span className="text-black">|</span>
                       {item.name}
                     </span>

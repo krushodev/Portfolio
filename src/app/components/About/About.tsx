@@ -43,7 +43,7 @@ function About() {
   return (
     <div className="h-full flex flex-col">
       <Title content={t('about')} />
-      <div className="grid grid-cols-1 lg:grid-cols-6 grid-row-4 lg:grid-rows-1 h-full lg:h-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-6 grid-row-4 lg:grid-rows-1 h-full overflow-hidden">
         <div className={`${showImageOnly ? 'lg:col-span-4' : 'col-span-1'} flex lg:items-center lg:w-full`}>
           <div className="max-h-[70vh] lg:max-h-[60vh] relative overflow-hidden">
             <div ref={textContainerRef} className="overflow-y-auto max-h-[70vh] lg:max-h-[60vh] pr-2">
@@ -60,11 +60,11 @@ function About() {
           </div>
         </div>
         {showImageOnly && (
-          <div className="hidden lg:flex lg:col-span-2 lg:items-center lg:justify-center">
+          <div className="hidden lg:flex lg:col-span-2 lg:items-center lg:justify-center lg:h-full">
             <Image
               src={aboutImage}
               alt="Picture of me"
-              className="w-full p-3 h-[12em] screen-h-md:h-[24em] screen-h-xl:h-[45em] lg:p-0 lg:max-h-[70vh] lg:min-h-[25em] lg:w-fit md:pr-7 object-cover rounded"
+              className="w-full p-3 h-[12em] screen-h-md:h-[24em] screen-h-xl:h-[45em] lg:p-0 lg:max-h-[60vh] lg:min-h-[25em] lg:w-fit md:pr-7 object-cover rounded"
             />
           </div>
         )}

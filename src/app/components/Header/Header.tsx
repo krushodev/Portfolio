@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className="h-full grid grid-rows-6 md:grid-rows-5">
       <div className="flex flex-col gap-5 row-span-4 md:flex-row md:row-span-3 md:justify-between">
-        <h2 className="text-4xl font-medium uppercase break-words sm:text-5xl s:w-3/4 lg:w-2/4 lg:text-7xl xl:text-8xl 2xl:text-9xl">Fullstack Developer</h2>
+        <h2 className="text-3xl font-medium uppercase break-words sm:text-4xl s:w-3/4 lg:w-2/4 lg:text-6xl xl:text-7xl 2xl:text-8xl">Fullstack Developer</h2>
         <div className="w-full max-h-80 md:max-w-xs md:max-h-72 xl:max-w-sm xl:max-h-80 z-10">
           <Image src={profileImage} alt="Profile picture" width={512} height={512} className="w-full max-h-full object-center object-cover brightness-95 contrast-105 rounded-md saturate-150" />
         </div>
