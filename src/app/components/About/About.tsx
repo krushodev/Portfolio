@@ -15,7 +15,7 @@ function About() {
   const [needsScroll, setNeedsScroll] = useState(false);
   const [showImageOnly, setShowImageOnly] = useState(true);
   const textContainerRef = useRef<HTMLDivElement>(null);
-  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const [paragraphElement, setParagraphElement] = useState<HTMLParagraphElement | null>(null);
   const { ref: inViewRef, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true
@@ -50,7 +50,7 @@ function About() {
 
   // Animate paragraph lines when in view
   useEffect(() => {
-    const paragraph = paragraphRef.current;
+    const paragraph = paragraphElement;
 
     if (paragraph && inView) {
       // Split text into lines
@@ -74,7 +74,7 @@ function About() {
         stagger: 0.2
       });
     }
-  }, [inView]);
+  }, [inView, paragraphElement]);
 
   return (
     <div className="h-full flex flex-col">
@@ -86,7 +86,7 @@ function About() {
               <p
                 ref={node => {
                   if (node) {
-                    paragraphRef.current = node;
+                    setParagraphElement(node);
                     inViewRef(node);
                   }
                 }}
