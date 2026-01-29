@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  cursor: none;
+  cursor: none !important;
 }
 
 /* Project Swiper Styles */

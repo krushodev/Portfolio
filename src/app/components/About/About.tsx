@@ -5,6 +5,9 @@ import Title from '../Title/Title';
 import aboutImage from '../../../../public/images/about-picture.jpeg';
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import SplitType from 'split-type';
+import { useInView } from 'react-intersection-observer';
 
 function About() {
   const t = useTranslations('sections');
@@ -12,6 +15,11 @@ function About() {
   const [needsScroll, setNeedsScroll] = useState(false);
   const [showImageOnly, setShowImageOnly] = useState(true);
   const textContainerRef = useRef<HTMLDivElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const { ref: inViewRef, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  });
 
   useEffect(() => {
     const checkScroll = () => {
@@ -40,6 +48,34 @@ function About() {
     };
   }, []);
 
+  // Animate paragraph lines when in view
+  useEffect(() => {
+    const paragraph = paragraphRef.current;
+
+    if (paragraph && inView) {
+      // Split text into lines
+      const paragraphSplit = new SplitType(paragraph, {
+        types: 'lines',
+        tagName: 'span'
+      });
+
+      // Initial state - hide lines from below
+      gsap.set(paragraphSplit.lines, {
+        y: '100%',
+        opacity: 0
+      });
+
+      // Animate lines with stagger effect
+      gsap.to(paragraphSplit.lines, {
+        y: '0%',
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power1.out',
+        stagger: 0.2
+      });
+    }
+  }, [inView]);
+
   return (
     <div className="h-full flex flex-col">
       <Title content={t('about')} />
@@ -47,7 +83,15 @@ function About() {
         <div className={`${showImageOnly ? 'lg:col-span-4' : 'col-span-1'} flex lg:items-center lg:w-full`}>
           <div className="max-h-[70vh] lg:max-h-[60vh] relative overflow-hidden">
             <div ref={textContainerRef} className="overflow-y-auto max-h-[70vh] lg:max-h-[60vh] pr-2">
-              <p className="text-lg xs:text-xl s:text-2xl md:text-3xl screen-h-md:leading-relaxed lg:text-3xl lg:!leading-loose 2xl:text-4xl 2xl:leading-loose 3xl:text-6xl 3xl:leading-loose">
+              <p
+                ref={node => {
+                  if (node) {
+                    paragraphRef.current = node;
+                    inViewRef(node);
+                  }
+                }}
+                className="text-lg xs:text-xl s:text-2xl md:text-3xl screen-h-md:leading-relaxed lg:text-3xl lg:!leading-loose 2xl:text-4xl 2xl:leading-loose 3xl:text-6xl 3xl:leading-loose"
+              >
                 {tAbout('description')}
               </p>
             </div>

@@ -1,0 +1,29 @@
+.custom-cursor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  z-index: 9999;
+  transition: none;
+  opacity: 1;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+body {
+  cursor: none !important;
+}
+
+* {
+  cursor: none !important;
+}
