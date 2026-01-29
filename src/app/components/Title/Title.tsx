@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
 import { useInView } from 'react-intersection-observer';
@@ -9,14 +9,14 @@ interface Props {
 }
 
 function Title({ content, isFirstSection = false }: Props) {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const [titleElement, setTitleElement] = useState<HTMLHeadingElement | null>(null);
   const { ref: inViewRef, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true
   });
 
   useEffect(() => {
-    const title = titleRef.current;
+    const title = titleElement;
 
     if (title && inView) {
       // Split text into words
@@ -63,10 +63,10 @@ function Title({ content, isFirstSection = false }: Props) {
         });
       }
     }
-  }, [inView, isFirstSection]);
+  }, [inView, isFirstSection, titleElement]);
 
   const setRefs = (node: HTMLHeadingElement | null) => {
-    titleRef.current = node;
+    setTitleElement(node);
     inViewRef(node);
   };
 
