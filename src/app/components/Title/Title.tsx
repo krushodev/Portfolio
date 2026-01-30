@@ -55,8 +55,20 @@ function Title({ content, isFirstSection = false }: Props) {
       // Animate underline if not first section
       if (!isFirstSection && underline && textContent) {
         // Get the width of the text content to match underline exactly
+        const textWidth = (textContent as HTMLElement).offsetWidth;
+
+        // Check if title is centered in current viewport (responsive)
+        const computedStyle = window.getComputedStyle(title);
+        const isCentered = computedStyle.textAlign === 'center';
+
+        // Set underline position based on current text alignment
+        gsap.set(underline, {
+          left: isCentered ? '50%' : '0%',
+          x: isCentered ? '-50%' : '0%'
+        });
+
         gsap.to(underline, {
-          width: (textContent as HTMLElement).offsetWidth,
+          width: textWidth,
           duration: 0.8,
           ease: 'power3.out',
           delay: 0.8 // Reduced from 1.0s to 0.8s

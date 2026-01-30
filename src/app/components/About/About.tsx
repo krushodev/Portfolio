@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Title from '../Title/Title';
 import aboutImage from '../../../../public/images/about-picture.jpeg';
 import { useTranslations } from 'next-intl';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
 import { useInView } from 'react-intersection-observer';
@@ -13,39 +13,52 @@ function About() {
   const t = useTranslations('sections');
   const tAbout = useTranslations('about');
   const [needsScroll, setNeedsScroll] = useState(false);
-  const [showImageOnly, setShowImageOnly] = useState(true);
+  const [showImage, setShowImage] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
   const textContainerRef = useRef<HTMLDivElement>(null);
+  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const [paragraphElement, setParagraphElement] = useState<HTMLParagraphElement | null>(null);
   const { ref: inViewRef, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true
   });
 
+  const checkLayout = useCallback(() => {
+    const isLargeScreen = window.innerWidth >= 1287;
+    setShowImage(isLargeScreen);
+
+    if (textContainerRef.current) {
+      const hasScroll = textContainerRef.current.scrollHeight > textContainerRef.current.clientHeight;
+      setNeedsScroll(hasScroll);
+    }
+  }, []);
+
   useEffect(() => {
-    const checkScroll = () => {
-      if (textContainerRef.current) {
-        const hasScroll = textContainerRef.current.scrollHeight > textContainerRef.current.clientHeight;
-        setNeedsScroll(hasScroll);
-      }
-    };
+    checkLayout();
+    window.addEventListener('resize', checkLayout);
+    return () => window.removeEventListener('resize', checkLayout);
+  }, [checkLayout]);
 
-    const checkImageDisplay = () => {
-      const shouldShowImage = window.innerWidth >= 1024; // Solo mostrar en desktop (lg)
-      setShowImageOnly(shouldShowImage);
-    };
+  // Handle scroll indicator animation with GSAP
+  useEffect(() => {
+    if (scrollIndicatorRef.current && needsScroll && !isAtBottom) {
+      gsap.to(scrollIndicatorRef.current, {
+        y: 5,
+        duration: 0.6,
+        ease: 'power1.inOut',
+        repeat: -1,
+        yoyo: true
+      });
+    }
+  }, [needsScroll, isAtBottom]);
 
-    checkScroll();
-    checkImageDisplay();
-
-    window.addEventListener('resize', () => {
-      checkScroll();
-      checkImageDisplay();
-    });
-
-    return () => {
-      window.removeEventListener('resize', checkScroll);
-      window.removeEventListener('resize', checkImageDisplay);
-    };
+  // Handle scroll events to detect when at bottom
+  const handleScroll = useCallback(() => {
+    if (textContainerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = textContainerRef.current;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 10;
+      setIsAtBottom(atBottom);
+    }
   }, []);
 
   // Animate paragraph lines when in view
@@ -53,19 +66,16 @@ function About() {
     const paragraph = paragraphElement;
 
     if (paragraph && inView) {
-      // Split text into lines
       const paragraphSplit = new SplitType(paragraph, {
         types: 'lines',
         tagName: 'span'
       });
 
-      // Initial state - hide lines from below
       gsap.set(paragraphSplit.lines, {
         y: '100%',
         opacity: 0
       });
 
-      // Animate lines with stagger effect
       gsap.to(paragraphSplit.lines, {
         y: '0%',
         opacity: 1,
@@ -79,39 +89,46 @@ function About() {
   return (
     <div className="h-full flex flex-col">
       <Title content={t('about')} />
-      <div className="grid grid-cols-1 lg:grid-cols-6 grid-row-4 lg:grid-rows-1 h-full overflow-hidden">
-        <div className={`${showImageOnly ? 'lg:col-span-4' : 'col-span-1'} flex lg:items-center lg:w-full`}>
-          <div className="max-h-[70vh] lg:max-h-[60vh] relative overflow-hidden">
-            <div ref={textContainerRef} className="overflow-y-auto max-h-[70vh] lg:max-h-[60vh] pr-2">
-              <p
-                ref={node => {
-                  if (node) {
-                    setParagraphElement(node);
-                    inViewRef(node);
-                  }
-                }}
-                className="text-lg xs:text-xl s:text-2xl md:text-3xl screen-h-md:leading-relaxed lg:text-3xl lg:!leading-loose 2xl:text-4xl 2xl:leading-loose 3xl:text-6xl 3xl:leading-loose"
+      <div className="flex-1 overflow-hidden">
+        <div className={`h-full ${showImage ? 'grid grid-cols-6' : 'flex items-center justify-center'}`}>
+          <div className={`${showImage ? 'col-span-4 flex items-center' : 'w-full max-w-4xl'} px-4 s:px-6 md:px-8`}>
+            <div className="relative w-full">
+              <div
+                ref={textContainerRef}
+                onScroll={handleScroll}
+                className={`${needsScroll ? 'overflow-y-auto max-h-[60vh] pr-2 scrollbar-thin scrollbar-thumb-[#dbd9d3]/30 scrollbar-track-transparent' : 'overflow-visible'}`}
               >
-                {tAbout('description')}
-              </p>
+                <p
+                  ref={node => {
+                    if (node) {
+                      setParagraphElement(node);
+                      inViewRef(node);
+                    }
+                  }}
+                  className={`text-base xxs:text-lg xs:text-xl s:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl 3xl:text-5xl leading-relaxed md:leading-relaxed lg:!leading-loose xl:!leading-loose 2xl:!leading-loose ${showImage ? 'text-left' : 'text-center'}`}
+                >
+                  {tAbout('description')}
+                </p>
+              </div>
+              {needsScroll && !isAtBottom && (
+                <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center pointer-events-none">
+                  <div className="w-full h-12 bg-gradient-to-t from-black to-transparent"></div>
+                  <div ref={scrollIndicatorRef} className="absolute bottom-2 flex flex-col items-center text-[#dbd9d3]/70">
+                    <span className="text-xs mb-1">Scroll</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                    </svg>
+                  </div>
+                </div>
+              )}
             </div>
-            {needsScroll && (
-              <>
-                <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#ecebe8] to-transparent pointer-events-none lg:from-black lg:to-transparent"></div>
-                <div className="absolute bottom-2 right-2 text-xs opacity-50 animate-bounce lg:text-[#dbd9d3]">↓</div>
-              </>
-            )}
           </div>
+          {showImage && (
+            <div className="col-span-2 flex items-center justify-center h-full">
+              <Image src={aboutImage} alt="Picture of me" className="max-h-[60vh] min-h-[25em] w-auto object-cover rounded pr-7" />
+            </div>
+          )}
         </div>
-        {showImageOnly && (
-          <div className="hidden lg:flex lg:col-span-2 lg:items-center lg:justify-center lg:h-full">
-            <Image
-              src={aboutImage}
-              alt="Picture of me"
-              className="w-full p-3 h-[12em] screen-h-md:h-[24em] screen-h-xl:h-[45em] lg:p-0 lg:max-h-[60vh] lg:min-h-[25em] lg:w-fit md:pr-7 object-cover rounded"
-            />
-          </div>
-        )}
       </div>
     </div>
   );
