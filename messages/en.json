@@ -39,6 +39,10 @@
       "description": "Ultra-lightweight, high-performance system monitor built with Rust and Tauri. It provides real-time visualization of system resources (CPU, RAM, Processes) with near-zero overhead and a modern interface powered by React.",
       "cardDescription": "High-performance system monitor built with Rust and Tauri."
     },
+    "focusly": {
+      "description": "A minimalist Pomodoro timer designed for deep work. It features preset focus modes, smooth GSAP animations, and a distraction-free interface built with Electron.",
+      "cardDescription": "Minimalist Pomodoro app designed for deep work flow."
+    },
     "nova": {
       "description": "Real-time financial dashboard for market exploration, integrating WebSockets and Binance API with a high-performance Bun and Redis backend.",
       "cardDescription": "Explore financial markets with real-time data streaming."

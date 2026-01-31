@@ -48,7 +48,29 @@ const projects: Project[] = [
     status: 'completed',
     year: 2025
   },
-
+  {
+    id: 'focusly',
+    name: 'Focusly',
+    slug: 'focusly',
+    cardTitle: 'Minimalist Pomodoro Timer',
+    cardDescription: 'Distraction-free focus tool designed to help users enter and maintain flow state.',
+    description: 'A beautiful, minimalist Pomodoro timer built for deep work, featuring smooth GSAP animations and custom focus modes.',
+    detailText: 'Cross-platform desktop application with native notifications and a premium violet-cyan aesthetic.',
+    longDescription:
+      'Focusly is a minimalist Pomodoro application designed to eliminate distractions and enhance productivity. It offers several focus presets (Classic, Deep, and Ultra Focus) alongside a fully configurable custom mode. The app leverages Electron for a native desktop experience and GSAP for high-quality visual feedback, including an animated progress ring and a breathing effect during focus sessions.',
+    repository: 'https://github.com/krushodev/focusly',
+    deploy: null,
+    image: { src: '/images/projects/focusly/hero.jpeg', width: 500, height: 300 },
+    gallery: [
+      { src: '/images/projects/focusly/hero.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/focusly/detail1.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/focusly/detail2.jpeg', width: 500, height: 300 }
+    ],
+    techStack: [{ name: 'Electron' }, { name: 'GSAP' }, { name: 'Vanilla JS' }, { name: 'CSS Variables' }, { name: 'Astro' }, { name: 'Tailwind CSS' }],
+    featured: true,
+    status: 'completed',
+    year: 2025
+  },
   {
     id: 'nova',
     name: 'Nova',

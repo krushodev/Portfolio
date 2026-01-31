@@ -38,6 +38,10 @@
       "description": "Monitor de sistema ultra-ligero y de alto rendimiento construido con Rust y Tauri. Proporciona visualización en tiempo real de recursos (CPU, RAM, Procesos) con un consumo de recursos cercano a cero y una interfaz moderna impulsada por React.",
       "cardDescription": "Monitor de sistema de alto rendimiento construido con Rust y Tauri."
     },
+    "focusly": {
+      "description": "Un temporizador Pomodoro minimalista diseñado para el trabajo profundo. Incluye modos de enfoque preestablecidos, animaciones fluidas con GSAP y una interfaz libre de distracciones construida con Electron.",
+      "cardDescription": "App Pomodoro minimalista diseñada para el flujo de trabajo profundo."
+    },
     "nova": {
       "description": "Dashboard financiero en tiempo real para exploración de mercados, integrando WebSockets y la API de Binance con un backend de alto rendimiento en Bun y Redis.",
       "cardDescription": "Explora mercados financieros con datos en tiempo real."
