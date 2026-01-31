@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import Title from '../Title/Title';
+import Title from '../../components/Title/Title';
 import skills from '@/app/mocks/skills';
 import { useTranslations } from 'next-intl';
 

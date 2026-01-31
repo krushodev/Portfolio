@@ -1,10 +1,10 @@
 'use client';
 
-import Header from '../components/Header/Header';
-import Work from '../components/Work/Work';
-import Knowledge from '../components/Knowledge/Knowledge';
-import About from '../components/About/About';
-import Contact from '../components/Contact/Contact';
+import Header from '../layout/Header/Header';
+import Work from '../layout/Work/Work';
+import Knowledge from '../layout/Knowledge/Knowledge';
+import About from '../layout/About/About';
+import Contact from '../layout/Contact/Contact';
 import Section from '../layout/Section';
 import VerticalNavbar from '../components/VerticalNavbar/VerticalNavbar';
 import CustomCursor from '../components/CustomCursor/CustomCursor';

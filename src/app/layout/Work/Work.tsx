@@ -2,14 +2,14 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar, Navigation } from 'swiper/modules';
-import ProjectCard from '../ProjectCard/ProjectCard';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import projects from '@/data/projects';
 import { useTranslations } from 'next-intl';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
-import Title from '../Title/Title';
+import Title from '../../components/Title/Title';
 
 function Work() {
   const t = useTranslations('sections');

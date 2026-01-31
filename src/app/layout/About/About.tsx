@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Title from '../Title/Title';
+import Title from '../../components/Title/Title';
 import aboutImage from '../../../../public/images/about-picture.jpeg';
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, useRef, useCallback } from 'react';

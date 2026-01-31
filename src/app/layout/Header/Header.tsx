@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ScrollDownIndicator from '../ScrollDownIndicator/ScrollDownIndicator';
+import ScrollDownIndicator from '../../components/ScrollDownIndicator/ScrollDownIndicator';
 import profileImage from '../../../../public/images/profile.jpg';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';

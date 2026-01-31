@@ -1,7 +1,7 @@
 'use client';
 
 import contact from '@/app/mocks/contact';
-import Title from '../Title/Title';
+import Title from '../../components/Title/Title';
 import { RxArrowTopRight, RxArrowDown } from 'react-icons/rx';
 import { useTranslations } from 'next-intl';
 
