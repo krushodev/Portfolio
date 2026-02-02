@@ -15,6 +15,7 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ children }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [hoverText, setHoverText] = useState('view');
+  const [isSidebarBullet, setIsSidebarBullet] = useState(false);
 
   useEffect(() => {
     // Hide cursor on touch devices
@@ -42,12 +43,17 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ children }) => {
       // Set hover text based on element type
       if (clickable) {
         const isCard = target.closest('[data-card="true"]') || target.closest('.project-card') || target.closest('.card');
+        const sidebarBullet = target.closest('.fixed.right-5') || target.closest('[data-sidebar="true"]') || target.closest('.vertical-navbar');
+
+        setIsSidebarBullet(!!sidebarBullet);
 
         if (isCard) {
           setHoverText('view');
         } else {
           setHoverText(''); // No text for any other elements
         }
+      } else {
+        setIsSidebarBullet(false);
       }
     };
 
@@ -78,10 +84,10 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ children }) => {
             className="custom-cursor enhanced-cursor"
             initial={{ scale: 0, opacity: 0 }}
             animate={{
-              scale: isHovering ? (hoverText ? 1.4 : 1.2) : 1,
+              scale: isHovering ? (hoverText ? 1.4 : isSidebarBullet ? 1.1 : 1.2) : 1,
               opacity: 1,
-              x: position.x - (isHovering ? (hoverText ? 42 : 36) : 30),
-              y: position.y - (isHovering ? (hoverText ? 42 : 36) : 30)
+              x: position.x - (isHovering ? (hoverText ? 42 : isSidebarBullet ? 33 : 36) : 30),
+              y: position.y - (isHovering ? (hoverText ? 42 : isSidebarBullet ? 33 : 36) : 30)
             }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{
@@ -93,8 +99,8 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ children }) => {
             style={{
               backgroundColor: isHovering && hoverText ? 'rgba(171, 166, 158, 0.9)' : 'rgba(236, 235, 232, 0.8)',
               mixBlendMode: isHovering && hoverText ? 'normal' : 'difference',
-              width: isHovering ? (hoverText ? '84px' : '72px') : '60px',
-              height: isHovering ? (hoverText ? '84px' : '72px') : '60px'
+              width: isHovering ? (hoverText ? '84px' : isSidebarBullet ? '66px' : '72px') : '60px',
+              height: isHovering ? (hoverText ? '84px' : isSidebarBullet ? '66px' : '72px') : '60px'
             }}
           >
             <motion.span
