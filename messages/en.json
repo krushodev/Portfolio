@@ -39,6 +39,10 @@
       "description": "Ultra-lightweight, high-performance system monitor built with Rust and Tauri. It provides real-time visualization of system resources (CPU, RAM, Processes) with near-zero overhead and a modern interface powered by React.",
       "cardDescription": "High-performance system monitor built with Rust and Tauri."
     },
+    "void": {
+      "description": "A minimalist fashion e-commerce platform for a men's oversized clothing brand, featuring AI-powered chat assistance, fluid animations with Framer Motion, and a curated product catalog focused on structural minimalism.",
+      "cardDescription": "Minimalist fashion e-commerce with AI-powered assistance."
+    },
     "focusly": {
       "description": "A minimalist Pomodoro timer designed for deep work. It features preset focus modes, smooth GSAP animations, and a distraction-free interface built with Electron.",
       "cardDescription": "Minimalist Pomodoro app designed for deep work flow."

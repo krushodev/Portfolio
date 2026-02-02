@@ -49,6 +49,30 @@ const projects: Project[] = [
     year: 2025
   },
   {
+    id: 'void',
+    name: 'VOID',
+    slug: 'void',
+    cardTitle: 'Minimalist Fashion E-commerce',
+    cardDescription: 'AI-powered fashion platform for premium oversized menswear.',
+    description: "A minimalist fashion e-commerce platform for a men's oversized clothing brand, featuring AI-powered chat assistance and fluid animations.",
+    detailText: 'Modern e-commerce experience with Gemini AI integration and architectural design focus.',
+    longDescription:
+      "VOID is a minimalist fashion e-commerce platform designed for a men's oversized clothing brand. It focuses on structural minimalism and earth tones, exploring the space between garment and skin. The platform features AI-powered chat assistance using Google Gemini, smooth animations with Framer Motion, and a responsive product catalog. Built with heavyweight fabrics in mind, the design reflects the brand's architectural fit and ethical production values.",
+    repository: 'https://github.com/krushodev/void',
+    deploy: 'https://void-fashion.vercel.app/',
+    image: { src: '/images/projects/void/hero.jpeg', width: 500, height: 300 },
+    gallery: [
+      { src: '/images/projects/void/hero.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/void/detail1.jpeg', width: 500, height: 300 },
+      { src: '/images/projects/void/detail2.jpeg', width: 500, height: 300 }
+    ],
+    techStack: [{ name: 'React 19' }, { name: 'TypeScript' }, { name: 'Vite' }, { name: 'Tailwind CSS' }, { name: 'Framer Motion' }, { name: 'Google Generative AI' }, { name: 'Lucide React' }],
+    featured: true,
+    status: 'completed',
+    year: 2026
+  },
+
+  {
     id: 'focusly',
     name: 'Focusly',
     slug: 'focusly',
