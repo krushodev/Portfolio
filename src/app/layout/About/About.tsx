@@ -18,6 +18,7 @@ function About() {
   const textContainerRef = useRef<HTMLDivElement>(null);
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const [paragraphElement, setParagraphElement] = useState<HTMLParagraphElement | null>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
   const { ref: inViewRef, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true
@@ -64,6 +65,7 @@ function About() {
   // Animate paragraph lines when in view
   useEffect(() => {
     const paragraph = paragraphElement;
+    const image = imageRef.current;
 
     if (paragraph && inView) {
       const paragraphSplit = new SplitType(paragraph, {
@@ -84,7 +86,23 @@ function About() {
         stagger: 0.2
       });
     }
-  }, [inView, paragraphElement]);
+
+    // Animate image when in view
+    if (image && inView && showImage) {
+      gsap.set(image, {
+        y: '100%',
+        opacity: 0
+      });
+
+      gsap.to(image, {
+        y: '0%',
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power1.out',
+        delay: 0.4
+      });
+    }
+  }, [inView, paragraphElement, showImage]);
 
   return (
     <div className="h-full flex flex-col">
@@ -124,7 +142,7 @@ function About() {
             </div>
           </div>
           {showImage && (
-            <div className="col-span-2 flex items-center justify-center h-full">
+            <div ref={imageRef} className="col-span-2 flex items-center justify-center h-full">
               <Image src={aboutImage} alt="Picture of me" className="max-h-[60vh] min-h-[25em] w-auto object-cover rounded pr-7" />
             </div>
           )}

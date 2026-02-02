@@ -5,6 +5,8 @@ import { Scrollbar, Navigation } from 'swiper/modules';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import projects from '@/data/projects';
 import { useTranslations } from 'next-intl';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
@@ -13,11 +15,37 @@ import Title from '../../components/Title/Title';
 
 function Work() {
   const t = useTranslations('sections');
+  const swiperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const swiperContainer = swiperRef.current;
+
+    if (swiperContainer) {
+      // Get all project cards
+      const projectCards = swiperContainer.querySelectorAll('.project-card');
+
+      // Initial state - hide cards from below with opacity
+      gsap.set(projectCards, {
+        y: '100%',
+        opacity: 0
+      });
+
+      // Animate cards with stagger effect
+      gsap.to(projectCards, {
+        y: '0%',
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power1.out',
+        stagger: 0.2,
+        delay: 0.6
+      });
+    }
+  }, []);
 
   return (
     <div className="h-full flex flex-col gap-2">
       <Title content={t('work')} />
-      <div className="h-3/4 flex items-center pr-8 overflow-hidden">
+      <div ref={swiperRef} className="h-3/4 flex items-center pr-8 overflow-hidden">
         <Swiper
           scrollbar={{
             hide: true
