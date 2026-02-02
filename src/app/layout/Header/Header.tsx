@@ -8,12 +8,14 @@ import SplitType from 'split-type';
 function Header() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const nameRef = useRef<HTMLHeadingElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const title = titleRef.current;
     const name = nameRef.current;
+    const image = imageRef.current;
 
-    if (title && name) {
+    if (title && name && image) {
       // Split text into words
       const titleSplit = new SplitType(title, {
         types: 'words',
@@ -36,6 +38,12 @@ function Header() {
         opacity: 0
       });
 
+      // Initial state - hide image from below
+      gsap.set(image, {
+        y: '50%',
+        opacity: 0
+      });
+
       // Animate words with stagger effect
       gsap.to(titleSplit.words, {
         y: '0%',
@@ -54,6 +62,15 @@ function Header() {
         stagger: 0.1,
         delay: 0.8
       });
+
+      // Animate image to appear in sync with texts
+      gsap.to(image, {
+        y: '0%',
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power1.out',
+        delay: 0.5
+      });
     }
   }, []);
   return (
@@ -62,7 +79,7 @@ function Header() {
         <h2 ref={titleRef} className="text-3xl font-medium uppercase break-words sm:text-4xl s:w-3/4 lg:w-2/4 lg:text-6xl xl:text-7xl 2xl:text-8xl">
           Fullstack Developer
         </h2>
-        <div className="w-full max-h-80 md:max-w-xs md:max-h-72 xl:max-w-sm xl:max-h-80 z-10">
+        <div ref={imageRef} className="w-full max-h-80 md:max-w-xs md:max-h-72 xl:max-w-sm xl:max-h-80 z-10">
           <Image src={profileImage} alt="Profile picture" width={512} height={512} className="w-full max-h-full object-center object-cover brightness-95 contrast-105 rounded-md saturate-150" />
         </div>
       </div>
