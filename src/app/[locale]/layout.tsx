@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import CustomCursor from '@/app/components/CustomCursor/CustomCursor';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -58,7 +59,7 @@ export default async function RootLayout({ children, params: { locale } }: { chi
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <CustomCursor>{children}</CustomCursor>
           <div className="h-full w-full fixed left-0 top-0 pointer-events-none opacity-[0.1] z-[100] after:absolute after:w-[calc(100%_+_20rem)] after:h-[calc(100%_+_20rem)] after:top-[-10rem] after:left-[-10rem] after:bg-[url('/images/noise.jpg')] after:animate-bgNoise"></div>
         </NextIntlClientProvider>
       </body>

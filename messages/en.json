@@ -29,7 +29,12 @@
     "sourceCode": "Source Code Repository",
     "liveDemo": "Live Production Demo"
   },
-
+  "cursor": {
+    "view": "View",
+    "explore": "",
+    "click": "",
+    "open": ""
+  },
   "projects": {
     "tilded": {
       "description": "A modern productivity ecosystem featuring Kanban boards, multi-language support (10+ languages), and personalized workflows built with React 19 and Fastify.",

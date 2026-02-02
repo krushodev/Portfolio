@@ -14,7 +14,7 @@ function ProjectCard({ data }: Props) {
   const t = useTranslations('projects');
 
   return (
-    <div className="h-full overflow-hidden relative rounded-lg" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+    <div className="h-full overflow-hidden relative rounded-lg project-card" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <Link href={`/${locale}/project/${data.slug}`}>
         <Image
           src={data.image.src}

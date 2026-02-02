@@ -29,6 +29,12 @@
     "sourceCode": "Repositorio de Código Fuente",
     "liveDemo": "Demo en Producción"
   },
+  "cursor": {
+    "view": "Ver",
+    "explore": "",
+    "click": "",
+    "open": ""
+  },
   "projects": {
     "tilded": {
       "description": "Ecosistema de productividad moderno con tableros Kanban, soporte para más de 10 idiomas y flujos personalizados creado con React 19 y Fastify.",
