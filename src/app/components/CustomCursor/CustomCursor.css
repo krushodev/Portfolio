@@ -7,10 +7,10 @@
   left: 0;
   width: 60px;
   height: 60px;
-  background: #ecebe8;
-  mix-blend-mode: difference;
+  background: #f5f4f2;
+  mix-blend-mode: normal;
   border-radius: 50%;
-  border: 1px solid rgba(171, 166, 158, 0.3);
+  border: 1px solid rgba(200, 195, 188, 0.3);
   pointer-events: none;
   z-index: 9999;
   opacity: 1;
@@ -20,14 +20,14 @@
 }
 
 .enhanced-cursor {
-  backdrop-filter: blur(1px);
-  border: 1px solid rgba(227, 226, 224, 0.4);
-  box-shadow: 0 8px 32px rgba(227, 226, 224, 0.15);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(245, 244, 242, 0.4);
+  box-shadow: 0 8px 32px rgba(245, 244, 242, 0.15);
 }
 
 .cursor-text {
   position: absolute;
-  color: #ecebe8;
+  color: #f5f4f2;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;

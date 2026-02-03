@@ -18,7 +18,6 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ children }) => {
   const [isSidebarBullet, setIsSidebarBullet] = useState(false);
 
   useEffect(() => {
-    // Hide cursor on touch devices
     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
       return;
     }
@@ -97,8 +96,7 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ children }) => {
               mass: 1
             }}
             style={{
-              backgroundColor: isHovering && hoverText ? 'rgba(171, 166, 158, 0.9)' : 'rgba(236, 235, 232, 0.8)',
-              mixBlendMode: isHovering && hoverText ? 'normal' : 'difference',
+              backgroundColor: isHovering && hoverText ? 'rgba(200, 195, 188, 0.9)' : 'rgba(145, 145, 145, 0.299)',
               width: isHovering ? (hoverText ? '84px' : isSidebarBullet ? '66px' : '72px') : '60px',
               height: isHovering ? (hoverText ? '84px' : isSidebarBullet ? '66px' : '72px') : '60px'
             }}
