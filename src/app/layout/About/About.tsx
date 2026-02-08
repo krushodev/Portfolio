@@ -15,6 +15,7 @@ function About() {
   const [needsScroll, setNeedsScroll] = useState(false);
   const [showImage, setShowImage] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const contentAreaRef = useRef<HTMLDivElement>(null);
   const textContainerRef = useRef<HTMLDivElement>(null);
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const [paragraphElement, setParagraphElement] = useState<HTMLParagraphElement | null>(null);
@@ -28,9 +29,17 @@ function About() {
     const isLargeScreen = window.innerWidth >= 1287;
     setShowImage(isLargeScreen);
 
-    if (textContainerRef.current) {
-      const hasScroll = textContainerRef.current.scrollHeight > textContainerRef.current.clientHeight;
-      setNeedsScroll(hasScroll);
+    const contentArea = contentAreaRef.current;
+    const textContainer = textContainerRef.current;
+
+    if (contentArea && textContainer) {
+      const availableHeight = contentArea.clientHeight;
+      textContainer.style.maxHeight = `${availableHeight}px`;
+
+      requestAnimationFrame(() => {
+        const hasScroll = textContainer.scrollHeight > textContainer.clientHeight;
+        setNeedsScroll(hasScroll);
+      });
     }
   }, []);
 
@@ -40,17 +49,31 @@ function About() {
     return () => window.removeEventListener('resize', checkLayout);
   }, [checkLayout]);
 
+  // Re-check after fonts/content load
+  useEffect(() => {
+    const timer = setTimeout(checkLayout, 500);
+    return () => clearTimeout(timer);
+  }, [checkLayout]);
+
   // Handle scroll indicator animation with GSAP
   useEffect(() => {
     if (scrollIndicatorRef.current && needsScroll && !isAtBottom) {
+      gsap.killTweensOf(scrollIndicatorRef.current);
       gsap.to(scrollIndicatorRef.current, {
-        y: 5,
-        duration: 0.6,
+        y: 4,
+        duration: 0.8,
         ease: 'power1.inOut',
         repeat: -1,
         yoyo: true
       });
     }
+
+    const indicatorEl = scrollIndicatorRef.current;
+    return () => {
+      if (indicatorEl) {
+        gsap.killTweensOf(indicatorEl);
+      }
+    };
   }, [needsScroll, isAtBottom]);
 
   // Handle scroll events to detect when at bottom
@@ -107,15 +130,11 @@ function About() {
   return (
     <div className="h-full flex flex-col">
       <Title content={t('about')} />
-      <div className="flex-1 overflow-hidden">
+      <div ref={contentAreaRef} className="flex-1 overflow-hidden">
         <div className={`h-full ${showImage ? 'grid grid-cols-6' : 'flex items-center justify-center'}`}>
           <div className={`${showImage ? 'col-span-4 flex items-center' : 'w-full max-w-4xl'} px-4 s:px-6 md:px-8`}>
             <div className="relative w-full">
-              <div
-                ref={textContainerRef}
-                onScroll={handleScroll}
-                className={`${needsScroll ? 'overflow-y-auto max-h-[60vh] pr-2 scrollbar-thin scrollbar-thumb-[#dbd9d3]/30 scrollbar-track-transparent' : 'overflow-visible'}`}
-              >
+              <div ref={textContainerRef} onScroll={handleScroll} className="overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-current/20 scrollbar-track-transparent">
                 <p
                   ref={node => {
                     if (node) {
@@ -128,26 +147,24 @@ function About() {
                   {tAbout('description')}
                 </p>
               </div>
-              {needsScroll && !isAtBottom && (
-                <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center pointer-events-none">
-                  <div className="w-full h-12 bg-gradient-to-t from-black to-transparent"></div>
-                  <div ref={scrollIndicatorRef} className="absolute bottom-2 flex flex-col items-center text-[#dbd9d3]/70">
-                    <span className="text-xs mb-1">Scroll</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                    </svg>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
           {showImage && (
-            <div ref={imageRef} className="col-span-2 flex items-center justify-center h-full">
+            <div ref={imageRef} className="col-span-2 flex items-start justify-center h-full pt-8">
               <Image src={aboutImage} alt="Picture of me" className="max-h-[60vh] min-h-[25em] w-auto object-cover rounded pr-7" />
             </div>
           )}
         </div>
       </div>
+      {needsScroll && !isAtBottom && (
+        <div className="flex justify-center py-2 pointer-events-none">
+          <div ref={scrollIndicatorRef} className="opacity-50">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams, useRouter } from 'next/navigation';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import projects from '@/data/projects';
 import { Project } from '@/data/projects/types';
@@ -27,6 +27,11 @@ function ProjectDetail() {
   const t = useTranslations('project');
   const tProjects = useTranslations('projects');
 
+  const [contentNeedsScroll, setContentNeedsScroll] = useState(false);
+  const [contentAtBottom, setContentAtBottom] = useState(false);
+  const contentColumnRef = useRef<HTMLDivElement>(null);
+  const scrollArrowRef = useRef<HTMLDivElement>(null);
+
   // Refs for GSAP animations
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLDivElement>(null);
@@ -50,6 +55,48 @@ function ProjectDetail() {
     setProject(foundProject || null);
     setProjectSlug(slug);
   }, [params.slug]);
+
+  // Scroll detection for content column
+  const checkContentScroll = useCallback(() => {
+    if (contentColumnRef.current) {
+      const { scrollHeight, clientHeight } = contentColumnRef.current;
+      setContentNeedsScroll(scrollHeight > clientHeight + 10);
+    }
+  }, []);
+
+  useEffect(() => {
+    checkContentScroll();
+    window.addEventListener('resize', checkContentScroll);
+    const timer = setTimeout(checkContentScroll, 500);
+    return () => {
+      window.removeEventListener('resize', checkContentScroll);
+      clearTimeout(timer);
+    };
+  }, [checkContentScroll, project]);
+
+  useEffect(() => {
+    if (scrollArrowRef.current && contentNeedsScroll && !contentAtBottom) {
+      gsap.killTweensOf(scrollArrowRef.current);
+      gsap.to(scrollArrowRef.current, {
+        y: 4,
+        duration: 0.8,
+        ease: 'power1.inOut',
+        repeat: -1,
+        yoyo: true
+      });
+    }
+    const arrowEl = scrollArrowRef.current;
+    return () => {
+      if (arrowEl) gsap.killTweensOf(arrowEl);
+    };
+  }, [contentNeedsScroll, contentAtBottom]);
+
+  const handleContentScroll = useCallback(() => {
+    if (contentColumnRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = contentColumnRef.current;
+      setContentAtBottom(scrollTop + clientHeight >= scrollHeight - 10);
+    }
+  }, []);
 
   // GSAP animations for text elements
   useEffect(() => {
@@ -277,7 +324,7 @@ function ProjectDetail() {
             </div>
 
             {/* Content Column */}
-            <div className="order-1 lg:order-2 flex flex-col gap-4 lg:gap-6 overflow-y-auto">
+            <div className="order-1 lg:order-2 flex flex-col gap-4 lg:gap-6 overflow-y-auto relative" ref={contentColumnRef} onScroll={handleContentScroll}>
               {/* Header */}
               <div className="pb-3 flex-shrink-0">
                 <h1 ref={titleRef} className="text-xl xxs:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold uppercase mb-2 tracking-tight">
@@ -350,6 +397,15 @@ function ProjectDetail() {
                   )}
                 </div>
               </div>
+              {contentNeedsScroll && !contentAtBottom && (
+                <div className="sticky bottom-1 flex justify-center pointer-events-none py-1">
+                  <div ref={scrollArrowRef} className="opacity-50">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

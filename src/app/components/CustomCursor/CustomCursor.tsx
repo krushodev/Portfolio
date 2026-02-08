@@ -83,10 +83,10 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ children }) => {
             className="custom-cursor enhanced-cursor"
             initial={{ scale: 0, opacity: 0 }}
             animate={{
-              scale: isHovering ? (hoverText ? 1.4 : isSidebarBullet ? 1.1 : 1.2) : 1,
+              scale: isHovering ? (hoverText ? 1.4 : isSidebarBullet ? 0.65 : 1.2) : 1,
               opacity: 1,
-              x: position.x - (isHovering ? (hoverText ? 42 : isSidebarBullet ? 33 : 36) : 30),
-              y: position.y - (isHovering ? (hoverText ? 42 : isSidebarBullet ? 33 : 36) : 30)
+              x: position.x - (isHovering ? (hoverText ? 42 : isSidebarBullet ? 20 : 36) : 30),
+              y: position.y - (isHovering ? (hoverText ? 42 : isSidebarBullet ? 20 : 36) : 30)
             }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{
@@ -97,8 +97,8 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ children }) => {
             }}
             style={{
               backgroundColor: isHovering && hoverText ? 'rgba(200, 195, 188, 0.9)' : 'rgba(145, 145, 145, 0.299)',
-              width: isHovering ? (hoverText ? '84px' : isSidebarBullet ? '66px' : '72px') : '60px',
-              height: isHovering ? (hoverText ? '84px' : isSidebarBullet ? '66px' : '72px') : '60px'
+              width: isHovering ? (hoverText ? '84px' : isSidebarBullet ? '40px' : '72px') : '60px',
+              height: isHovering ? (hoverText ? '84px' : isSidebarBullet ? '40px' : '72px') : '60px'
             }}
           >
             <motion.span
