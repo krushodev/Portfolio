@@ -79,8 +79,15 @@ function Header() {
         <h2 ref={titleRef} className="text-3xl font-medium uppercase break-words sm:text-4xl s:w-3/4 lg:w-2/4 lg:text-6xl xl:text-7xl 2xl:text-8xl">
           Fullstack Developer
         </h2>
-        <div ref={imageRef} className="w-full max-h-80 md:max-w-xs md:max-h-72 xl:max-w-sm xl:max-h-80 z-10">
-          <Image src={profileImage} alt="Profile picture" width={512} height={512} className="w-full max-h-full object-center object-cover brightness-95 contrast-105 rounded-md saturate-150" />
+        <div ref={imageRef} className="w-full max-h-52 xxs:max-h-60 xs:max-h-72 md:max-w-xs md:max-h-72 xl:max-w-sm xl:max-h-80">
+          <Image
+            src={profileImage}
+            alt="Ignacio Kruchowski - Full Stack Developer"
+            width={512}
+            height={512}
+            className="w-full max-h-full object-center object-cover brightness-95 contrast-105 rounded-md saturate-150"
+            priority
+          />
         </div>
       </div>
       <div className="flex justify-between items-end row-span-2 sm:flex-row sm:justify-between">

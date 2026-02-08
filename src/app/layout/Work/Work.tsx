@@ -45,7 +45,7 @@ function Work() {
   return (
     <div className="h-full flex flex-col gap-2">
       <Title content={t('work')} />
-      <div ref={swiperRef} className="h-3/4 flex items-center pr-8 overflow-hidden">
+      <div ref={swiperRef} className="h-3/4 flex items-center px-4 md:px-0 md:pr-8 overflow-hidden">
         <Swiper
           scrollbar={{
             hide: true

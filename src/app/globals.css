@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  cursor: none !important;
+@media (pointer: fine) {
+  body {
+    cursor: none !important;
+  }
+
+  * {
+    cursor: none !important;
+  }
 }
 
 /* Project Swiper Styles */

@@ -63,7 +63,7 @@ function LanguagePicker({ isProjectPage = false }: Props) {
   return (
     <button
       onClick={switchLocale}
-      className={`fixed top-5 right-5 z-50 font-medium uppercase text-lg tracking-wider transition-colors duration-300 hover:opacity-70 ${textColor}`}
+      className={`fixed top-5 right-5 z-50 font-medium uppercase text-lg tracking-wider transition-colors duration-300 hover:opacity-70 hidden md:block ${textColor}`}
       style={{ fontFamily: 'inherit' }}
     >
       {locale === 'en' ? 'ES' : 'EN'}

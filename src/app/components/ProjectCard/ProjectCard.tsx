@@ -21,7 +21,7 @@ function ProjectCard({ data }: Props) {
           alt={data.name}
           width={data.image.width}
           height={data.image.height}
-          className={`w-full h-full object-contain md:object-cover duration-500 ${isHovered ? 'blur-[2.5px] brightness-[0.40] scale-[1.03]' : ''}`}
+          className={`w-full h-full object-cover duration-500 ${isHovered ? 'blur-[2.5px] brightness-[0.40] scale-[1.03]' : ''}`}
         />
         <div className={`${isHovered ? 'opacity-1' : 'opacity-0'} absolute inset-0 transition duration-500`}>
           <div className="h-full flex flex-col justify-center px-5 screen-h-md:gap-5 screen-h-lg:gap-10">

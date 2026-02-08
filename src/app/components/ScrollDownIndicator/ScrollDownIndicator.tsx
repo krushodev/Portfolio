@@ -2,12 +2,12 @@ function ScrollDownIndicator() {
   const circleStyle = 'bg-[#c0bcb1] rounded-full absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] origin-[0%] transition-all duration-500 ease-in-out';
 
   return (
-    <div className="w-[75px] h-[75px] s:w-[100px] s:h-[100px] relative group">
-      <div className={`${circleStyle} w-[28px] h-[28px] z-0 top-[8px] animate-blobOne animate-bounce animate-pulse opacity-60 scale-90 group-hover:scale-100 s:w-[32px] s:h-[32px] shadow-sm`}></div>
+    <div className="w-[55px] h-[55px] xxs:w-[65px] xxs:h-[65px] s:w-[100px] s:h-[100px] relative group">
+      <div className={`${circleStyle} w-[20px] h-[20px] xxs:w-[24px] xxs:h-[24px] z-0 top-[8px] animate-blobOne opacity-60 scale-90 group-hover:scale-100 s:w-[32px] s:h-[32px] shadow-sm`}></div>
       <div className={`${circleStyle} w-full h-full shadow-md`}></div>
-      <div className={`${circleStyle} w-[28px] h-[28px] z-0 bottom-[8px] animate-blobTwo animate-bounce animate-pulse opacity-60 scale-90 group-hover:scale-100 s:w-[32px] s:h-[32px] shadow-sm`}></div>
+      <div className={`${circleStyle} w-[20px] h-[20px] xxs:w-[24px] xxs:h-[24px] z-0 bottom-[8px] animate-blobTwo opacity-60 scale-90 group-hover:scale-100 s:w-[32px] s:h-[32px] shadow-sm`}></div>
       <svg
-        className="z-50 relative transition-transform duration-300 group-hover:scale-105"
+        className="z-[1] relative transition-transform duration-300 group-hover:scale-105"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"

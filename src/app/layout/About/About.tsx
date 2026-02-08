@@ -142,7 +142,7 @@ function About() {
                       inViewRef(node);
                     }
                   }}
-                  className={`text-base xxs:text-lg xs:text-xl s:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl 3xl:text-5xl leading-relaxed md:leading-relaxed lg:!leading-loose xl:!leading-loose 2xl:!leading-loose ${showImage ? 'text-left' : 'text-center'}`}
+                  className={`text-sm xxs:text-base xs:text-lg s:text-xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl 3xl:text-5xl leading-relaxed md:leading-relaxed lg:!leading-loose xl:!leading-loose 2xl:!leading-loose ${showImage ? 'text-left' : 'text-center'}`}
                 >
                   {tAbout('description')}
                 </p>
@@ -151,7 +151,7 @@ function About() {
           </div>
           {showImage && (
             <div ref={imageRef} className="col-span-2 flex items-start justify-center h-full pt-8">
-              <Image src={aboutImage} alt="Picture of me" className="max-h-[60vh] min-h-[25em] w-auto object-cover rounded pr-7" />
+              <Image src={aboutImage} alt="Ignacio Kruchowski - Software Developer based in Argentina" className="max-h-[60vh] min-h-[25em] w-auto object-cover rounded pr-7" />
             </div>
           )}
         </div>

@@ -83,7 +83,7 @@ function Title({ content, isFirstSection = false }: Props) {
   };
 
   return (
-    <div className="title-container relative inline-block mb-8 lg:mb-10">
+    <div className="title-container relative inline-block mb-4 md:mb-8 lg:mb-10">
       <h3 ref={setRefs} className="xxs:py-5 text-bold text-center mb-0 lg:mb-0 lg:text-left font-medium uppercase text-3xl xxs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
         {!isFirstSection ? <span className="title-content">{content}</span> : content}
       </h3>

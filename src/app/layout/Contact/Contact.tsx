@@ -13,7 +13,7 @@ function Contact() {
     <div className="h-full flex flex-col">
       <Title content={t('contact')} />
       <div className="h-full flex items-center justify-center">
-        <div className="flex flex-col justify-evenly gap-8 xxs:gap-12 xs:gap-14 sm:flex-row sm:gap-1 lg:gap-8 2xl:gap-16">
+        <nav aria-label="Contact links" className="flex flex-col justify-evenly gap-8 xxs:gap-12 xs:gap-14 sm:flex-row sm:gap-1 lg:gap-8 2xl:gap-16">
           {contact.map((item, index) => (
             <a
               key={index}
@@ -21,12 +21,14 @@ function Contact() {
               href={item.link}
               download={item.isFile}
               target={`${item.isFile ? '' : '_blank'}`}
+              rel={item.isFile ? undefined : 'noopener noreferrer'}
+              aria-label={item.isFile ? tContact('resume') : `${item.name} profile`}
             >
               {item.isFile ? tContact('resume') : item.name}
-              {item.isFile ? <RxArrowDown /> : <RxArrowTopRight />}
+              {item.isFile ? <RxArrowDown aria-hidden="true" /> : <RxArrowTopRight aria-hidden="true" />}
             </a>
           ))}
-        </div>
+        </nav>
       </div>
     </div>
   );

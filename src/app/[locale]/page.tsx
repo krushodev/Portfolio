@@ -19,7 +19,7 @@ function Home() {
         <BurgerMenu />
         <VerticalNavbar />
 
-        <div className="h-screen w-screen overflow-y-auto md:snap-y md:snap-mandatory">
+        <main className="h-screen w-screen overflow-y-auto md:snap-y md:snap-mandatory">
           <Section name="home">
             <Header />
           </Section>
@@ -35,7 +35,7 @@ function Home() {
           <Section name="contact">
             <Contact />
           </Section>
-        </div>
+        </main>
       </CustomCursor>
     </div>
   );
